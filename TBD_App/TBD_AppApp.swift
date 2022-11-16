@@ -4,7 +4,7 @@
 //
 //  Created by Many Kaufmann und Nizam Oezdemir on 16.11.22.
 //  Hoi
-// Many Many
+// Many Many Many
 
 import SwiftUI
 
