@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  TBD_App
 //
-//  Created by Many Kaufmann on 16.11.22.
+//  Created by Many & Nizam  on 16.11.22.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  StartView.swift
 //  TBD_App
 //
-//  Created by Nizam on 18.11.22.
+//  Created by Many & Nizam on 18.11.22.
 //
 
 import SwiftUI

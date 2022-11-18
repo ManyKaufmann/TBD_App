@@ -3,7 +3,7 @@
 //  TBD_App
 //
 //  Created by Many Kaufmann und Nizam Oezdemir on 16.11.22.
-//  Hoi Many Lets go
+//  
 // 
 
 import SwiftUI

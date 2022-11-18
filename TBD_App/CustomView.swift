@@ -2,14 +2,23 @@
 //  CustomView.swift
 //  TBD_App
 //
-//  Created by HSLU-N0004388 on 18.11.22.
+//  Created by Many & Nizam on 18.11.22.
 //
 
 import SwiftUI
 
 struct CustomView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Customize your well beeing")
+                .bold()
+            Spacer()
+        }
+        .padding(.top, 50.0)
+        
+        HStack{
+            
+        }
     }
 }
 
