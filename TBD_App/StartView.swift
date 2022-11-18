@@ -16,6 +16,7 @@ struct StartView: View {
                     .font(.title)
                 Spacer().frame(height: 0)
                 TextField("", text: $userName)
+                    .padding(.leading, 10.0)
                     .frame(width: 300.0, height: 60.0)
                     .overlay(
                         RoundedRectangle(cornerRadius: 6)
