@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CCF83F1292782ED00678188 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF83F0292782ED00678188 /* StartView.swift */; };
 		34746F6F29254B4100B26909 /* TBD_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F6E29254B4100B26909 /* TBD_AppApp.swift */; };
 		34746F7129254B4100B26909 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F7029254B4100B26909 /* ContentView.swift */; };
 		34746F7329254B4200B26909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34746F7229254B4200B26909 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CCF83F0292782ED00678188 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		34746F6B29254B4100B26909 /* TBD_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBD_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34746F6E29254B4100B26909 /* TBD_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBD_AppApp.swift; sourceTree = "<group>"; };
 		34746F7029254B4100B26909 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				34746F7729254B4200B26909 /* Persistence.swift */,
 				34746F7929254B4200B26909 /* TBD_App.xcdatamodeld */,
 				34746F7429254B4200B26909 /* Preview Content */,
+				2CCF83F0292782ED00678188 /* StartView.swift */,
 			);
 			path = TBD_App;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34746F7829254B4200B26909 /* Persistence.swift in Sources */,
+				2CCF83F1292782ED00678188 /* StartView.swift in Sources */,
 				34746F7129254B4100B26909 /* ContentView.swift in Sources */,
 				34746F7B29254B4200B26909 /* TBD_App.xcdatamodeld in Sources */,
 				34746F6F29254B4100B26909 /* TBD_AppApp.swift in Sources */,
