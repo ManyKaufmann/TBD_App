@@ -15,7 +15,7 @@ struct StartView: View {
                 Text("Your Name")
                     .font(.callout)
                 Spacer().frame(height: 0)
-                TextField("Enter Name...", text: $userName)
+                TextField("", text: $userName)
                     .frame(width: 300.0, height: 40.0)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .border(Color.blue)
