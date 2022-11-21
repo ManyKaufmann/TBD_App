@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CustomView: View {
     @State var data: String = ""
+    
+    @Environment(\.managedObjectContext) var test
+    @FetchRequest(sortDescriptors: []) var customData: FetchedResults<CustomData>
     
     var inputHeight = 25.0;
     var inputWidth = 70.0;
@@ -163,7 +167,16 @@ struct CustomView: View {
                 
                 // Button
                 
-                Button(){}label: {
+                Button(){
+                    let customData = CustomData(context: test)
+                    customData.id = UUID()
+                    customData.drinkGoal = 2
+                    customData.activityGoal = 1
+                    customData.socialGoal = 1
+                    customData.meTimeGoal = 1
+                    
+                    try? test.save()
+                }label: {
                     Text("save").font(.system(size: 16))
                 }
                 .frame(width: 140.0, height: 40.0)
