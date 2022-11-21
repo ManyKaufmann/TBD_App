@@ -21,6 +21,8 @@
 		34746F8529254B4200B26909 /* TBD_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F8429254B4200B26909 /* TBD_AppTests.swift */; };
 		34746F8F29254B4200B26909 /* TBD_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F8E29254B4200B26909 /* TBD_AppUITests.swift */; };
 		34746F9129254B4200B26909 /* TBD_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F9029254B4200B26909 /* TBD_AppUITestsLaunchTests.swift */; };
+		34DADB5E292BF86600B89B1D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DADB5D292BF86600B89B1D /* DetailView.swift */; };
+		34DADB60292BF9C400B89B1D /* OverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DADB5F292BF9C400B89B1D /* OverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		34746F8A29254B4200B26909 /* TBD_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBD_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34746F8E29254B4200B26909 /* TBD_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBD_AppUITests.swift; sourceTree = "<group>"; };
 		34746F9029254B4200B26909 /* TBD_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBD_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		34DADB5D292BF86600B89B1D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		34DADB5F292BF9C400B89B1D /* OverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			children = (
 				34746F6E29254B4100B26909 /* TBD_AppApp.swift */,
 				2CCF83F7292BC3E000678188 /* DataController.swift */,
+				34DADB5D292BF86600B89B1D /* DetailView.swift */,
 				34746F7029254B4100B26909 /* ContentView.swift */,
 				34746F7229254B4200B26909 /* Assets.xcassets */,
 				34746F7729254B4200B26909 /* Persistence.swift */,
@@ -119,6 +124,7 @@
 				2CCF83F2292795F600678188 /* CustomView.swift */,
 				2CCF83F4292BC2BA00678188 /* CustomDataModel.xcdatamodeld */,
 				2CCF83F9292BC66600678188 /* ResultView.swift */,
+				34DADB5F292BF9C400B89B1D /* OverView.swift */,
 			);
 			path = TBD_App;
 			sourceTree = "<group>";
@@ -281,11 +287,13 @@
 				34746F7829254B4200B26909 /* Persistence.swift in Sources */,
 				2CCF83F1292782ED00678188 /* StartView.swift in Sources */,
 				2CCF83FA292BC66600678188 /* ResultView.swift in Sources */,
+				34DADB5E292BF86600B89B1D /* DetailView.swift in Sources */,
 				2CCF83F6292BC2BB00678188 /* CustomDataModel.xcdatamodeld in Sources */,
 				34746F7129254B4100B26909 /* ContentView.swift in Sources */,
 				2CCF83F3292795F600678188 /* CustomView.swift in Sources */,
 				2CCF83F8292BC3E000678188 /* DataController.swift in Sources */,
 				34746F7B29254B4200B26909 /* TBD_App.xcdatamodeld in Sources */,
+				34DADB60292BF9C400B89B1D /* OverView.swift in Sources */,
 				34746F6F29254B4100B26909 /* TBD_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
