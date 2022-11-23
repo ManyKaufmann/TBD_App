@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct TBD_AppApp: App {
-    @StateObject private var dataController = DataController()
+    //@StateObject private var dataController = DataController()
     //let persistenceController = PersistenceController.shared
 
     var body: some Scene {
@@ -19,8 +19,8 @@ struct TBD_AppApp: App {
              ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
              */
-            ResultView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            //CoreDataResultCustomView()
+            CoreDataResultResultView()
         }
     }
 }
