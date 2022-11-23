@@ -8,53 +8,8 @@
 import SwiftUI
 import CoreData
 
-class CustomView: ObservableObject {
-    let container: NSPersistentContainer
-    @Published var savedEntities: [CustomData] = []
-    
-    init() {
-        container = NSPersistentContainer(name: "CustomDataModel")
-        container.loadPersistentStores { (description, error) in
-            if let error = error {
-                print("Error Loading Core Data. \(error)")
-            }
-        }
-        fetchCustomData()
-    }
-    
-    func fetchCustomData() {
-        let request = NSFetchRequest<CustomData>(entityName: "CustomData")
-        
-        do {
-            savedEntities = try container.viewContext.fetch(request)
-        } catch let error {
-            print("Error fetching. \(error)")
-        }
-    }
-    
-    func addCustomData(param1: String, param2: String, param3: String, param4: String) {
-        let newCustomData = CustomData(context: container.viewContext)
-        newCustomData.id = UUID()
-        newCustomData.drinkGoal = (param1 as NSString).floatValue
-        newCustomData.activityGoal = (param2 as NSString).floatValue
-        newCustomData.socialGoal = (param3 as NSString).floatValue
-        newCustomData.meTimeGoal = (param4 as NSString).floatValue
-        saveData()
-        print("Data Added")
-    }
-    
-    func saveData() {
-        do {
-            try container.viewContext.save()
-            fetchCustomData()
-        } catch let error {
-            print("Error saving Data. \(error)")
-        }
-    }
-}
-
-struct CoreDataResultCustomView: View {
-    @StateObject var customView = CustomView()
+struct CustomView: View {
+    @StateObject var dataController = DataController()
     @State var drinkInput: String = ""
     @State var activityGoal: String = ""
     @State var socialGoal: String = ""
@@ -221,7 +176,7 @@ struct CoreDataResultCustomView: View {
                     guard !socialGoal.isEmpty else {return}
                     guard !meTimeGoal.isEmpty else {return}
                     print("Nothing empty")
-                    customView.addCustomData(param1: drinkInput, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
+                    dataController.addCustomData(param1: drinkInput, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
                     print("Func addCustomData() has been executeed")
                     drinkInput = ""
                     activityGoal = ""
@@ -239,7 +194,7 @@ struct CoreDataResultCustomView: View {
                 )
                 Spacer()
                 /*
-                Group{}
+         
                 List {
                     ForEach(customView.savedEntities) { entity in
                         Group{
@@ -248,11 +203,8 @@ struct CoreDataResultCustomView: View {
                     }
                 }
                  */
-             
-            
             }
             Spacer().frame(height: 100)
-
         }
         .padding(.top, 50.0)
         .padding()
@@ -261,6 +213,6 @@ struct CoreDataResultCustomView: View {
 
 struct CustomView_Previews: PreviewProvider {
     static var previews: some View {
-        CoreDataResultCustomView()
+        CustomView()
     }
 }
