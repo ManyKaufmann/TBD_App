@@ -24,9 +24,9 @@ struct ResultView: View {
                 
                 // Beispiel: Zugriff auf einzelnes Dateielement
                 // [n]th result Element from CoreData array in DataController.savedEntities
-                let data = dataController.savedEntities[1].meTimeGoal
+                //let data = dataController.savedEntities[1].meTimeGoal
                 // Konvertierung von Float auf String
-                Text(String(format: "%.1f", data))
+                //Text(String(format: "%.1f", data))
             }
             
             // Test insert data
