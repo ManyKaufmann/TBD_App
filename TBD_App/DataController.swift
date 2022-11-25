@@ -45,6 +45,12 @@ class DataController: ObservableObject {
         print("Data Added")
     }
     
+    func updateFruit(entity: CustomData){
+        let newData = ("1.0" as NSString).floatValue
+        entity.drinkCurrent = newData
+        saveData()
+    }
+    
     func saveData() {
         do {
             try container.viewContext.save()

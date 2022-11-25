@@ -192,17 +192,6 @@ struct CustomView: View {
                 .overlay(RoundedRectangle(cornerRadius: 5)
                     .stroke(.indigo.opacity(0.8), lineWidth: 1)
                 )
-                Spacer()
-                /*
-         
-                List {
-                    ForEach(customView.savedEntities) { entity in
-                        Group{
-                            Text("Hello")
-                        }
-                    }
-                }
-                 */
             }
             Spacer().frame(height: 100)
         }

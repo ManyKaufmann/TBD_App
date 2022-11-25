@@ -15,26 +15,32 @@ struct ResultView: View {
         VStack(spacing: 20) {
             List{
                 ForEach(dataController.savedEntities) { entity in
-                    Text("List")
-                    Text(String(format: "%.1f", entity.drinkGoal))
-                    Text(String(format: "%.1f", entity.activityGoal))
-                    Text(String(format: "%.1f", entity.socialGoal))
-                    Text(String(format: "%.1f", entity.meTimeGoal))
+                    Text("Your Progress")
+                    Text("Drink " + String(format: "%.1f", entity.drinkCurrent)+"/"+String(format: "%.1f", entity.drinkGoal))
+                    Text("Activity " + String(format: "%.1f", entity.activityCurrent)+"/"+String(format: "%.1f", entity.activityGoal))
+                    Text("Social " + String(format: "%.1f", entity.socialCurrent)+"/"+String(format: "%.1f", entity.socialGoal))
+                    Text("MeTime " + String(format: "%.1f", entity.meTimeCurrent)+"/"+String(format: "%.1f", entity.meTimeGoal))
                 }.onDelete(perform: dataController.deleteData)
                 
                 // Beispiel: Zugriff auf einzelnes Dateielement
                 // [n]th result Element from CoreData array in DataController.savedEntities
-                //let data = dataController.savedEntities[1].meTimeGoal
+                //let data = dataController.savedEntities[0].meTimeGoal
                 // Konvertierung von Float auf String
                 //Text(String(format: "%.1f", data))
             }
             
             // Test insert data
             Button(action: {
-                print("Button pressed")
+                print("Start Button pressed")
                 dataController.addCustomData(param1: "2.0", param2: "1.0", param3: "3.0", param4: "0.5")
             }){
-                Text("Test")
+                Text("Start")
+            }
+            Button(action: {
+                print("Update Button pressed")
+                dataController.updateFruit(entity: dataController.savedEntities[0])
+            }){
+                Text("Update")
             }
         }
     }
