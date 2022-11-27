@@ -32,7 +32,7 @@ struct ResultView: View {
             // Test insert data
             Button(action: {
                 print("Start Button pressed")
-                dataController.addCustomData(param1: "2.0", param2: "1.0", param3: "3.0", param4: "0.5")
+                dataController.addGoals(param1: "2.0", param2: "1.0", param3: "3.0", param4: "0.5")
             }){
                 Text("Start")
             }

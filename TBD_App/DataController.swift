@@ -34,18 +34,20 @@ class DataController: ObservableObject {
         }
     }
     
-    func addCustomData(param1: String, param2: String, param3: String, param4: String) {
+    func addGoals(param1: String, param2: String, param3: String, param4: String) {
         let newCustomData = CustomData(context: container.viewContext)
         newCustomData.id = UUID()
         newCustomData.drinkGoal = (param1 as NSString).floatValue
         newCustomData.activityGoal = (param2 as NSString).floatValue
         newCustomData.socialGoal = (param3 as NSString).floatValue
         newCustomData.meTimeGoal = (param4 as NSString).floatValue
+        newCustomData.date = Date.now
         saveData()
         print("Data Added")
     }
     
-    func updateFruit(entity: CustomData){
+    // Test func
+    func update(entity: CustomData){
         let newData = ("1.0" as NSString).floatValue
         entity.drinkCurrent = newData
         saveData()
