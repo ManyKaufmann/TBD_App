@@ -37,13 +37,13 @@ class DataController: ObservableObject {
     func addGoals(param1: String, param2: String, param3: String, param4: String) {
         let newCustomData = CustomData(context: container.viewContext)
         newCustomData.id = UUID()
+        newCustomData.startDate = Date.now
         newCustomData.drinkGoal = (param1 as NSString).floatValue
         newCustomData.activityGoal = (param2 as NSString).floatValue
         newCustomData.socialGoal = (param3 as NSString).floatValue
         newCustomData.meTimeGoal = (param4 as NSString).floatValue
-        newCustomData.date = Date.now
         saveData()
-        print("Data Added")
+        print(Date.now)
     }
     
     // Test func
