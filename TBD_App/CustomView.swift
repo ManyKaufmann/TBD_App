@@ -176,7 +176,7 @@ struct CustomView: View {
                     guard !socialGoal.isEmpty else {return}
                     guard !meTimeGoal.isEmpty else {return}
                     print("Nothing empty")
-                    dataController.addGoalsparam1: drinkInput, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
+                    dataController.addGoals(param1: drinkInput, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
                     print("Func addCustomData() has been executeed")
                     drinkInput = ""
                     activityGoal = ""
