@@ -17,10 +17,10 @@ struct TBD_AppApp: App {
              ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
              */
-            //CustomView()
+            CustomView()
             //ResultView()
             //CoreDataManager()
-            StartView()
+            //StartView()
         }
     }
 }

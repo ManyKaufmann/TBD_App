@@ -13,11 +13,14 @@ struct StartView: View {
     @State private var selection: String? = nil
     
     var body: some View {
+
         NavigationView {
+            
             VStack() {
                 Text("Your Name")
                     .font(.title)
                 Spacer().frame(height: 0)
+                
                 TextField("", text: $userName)
                     .padding(.leading, 10.0)
                     .frame(width: 300.0, height: 60.0)
@@ -50,6 +53,7 @@ struct StartView: View {
         }.navigationTitle("Back")
     }
 }
+
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {

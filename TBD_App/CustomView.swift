@@ -11,6 +11,7 @@ import CoreData
 struct CustomView: View {
     @StateObject var dataController = DataController()
     @State var drinkInput: String = ""
+    @State var drinkInputAsFloat: Float = 1.0
     @State var activityGoal: String = ""
     @State var socialGoal: String = ""
     @State var meTimeGoal: String = ""
@@ -18,7 +19,9 @@ struct CustomView: View {
     
     var inputHeight = 25.0;
     var inputWidth = 70.0;
-    var distanceBetweenBlocks = 60.0;
+    var distanceBetweenBlocks = 80.0;
+    var btnSize = 50.0
+
     
     var body: some View {
         NavigationView {
@@ -30,23 +33,45 @@ struct CustomView: View {
                 VStack(alignment: .center){
                     
                     // Drink Section
-                    
-                    HStack(){
-                        Label("", systemImage: "star.fill")
-                        Text("Drink goal:").font(.system(size: 13))
+                    VStack (alignment: .leading){
+                        HStack(){
+                            Label("", systemImage: "star.fill")
+                            Text("Drink goal:").font(.system(size: 13))
+                            HStack{
+                                Text("Daily").bold()
+                                
+                                TextField("in liter", text: $drinkInput)
+                                    .frame(width: inputWidth, height: inputHeight)
+                                    .padding(.leading, 10.0)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 6)
+                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                    )
+                                
+                            }.font(.system(size: 13))
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                        }
                         HStack{
-                            Text("Daily").bold()
+                            Button(){
+                                drinkInputAsFloat += 0.1
+                            }label: {
+                                Text("+").font(.system(size: 30).bold())
+                            }
+                            .frame(width: btnSize, height: btnSize)
+                            .foregroundColor(Color.white)
+                            .background(Color.green)
+                            .cornerRadius(5)
                             
-                            TextField("in liter", text: $drinkInput)
-                                .frame(width: inputWidth, height: inputHeight)
-                                .padding(.leading, 10.0)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 6)
-                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                )
-                            
-                        }.font(.system(size: 13))
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            Button(){
+                                drinkInputAsFloat += 0.1
+                            }label: {
+                                Text("-").font(.system(size: 30).bold())
+                            }
+                            .frame(width: btnSize, height: btnSize)
+                            .foregroundColor(Color.white)
+                            .background(Color.red)
+                            .cornerRadius(5)
+                        }
                     }
                     Spacer().frame(height: distanceBetweenBlocks)
                     
