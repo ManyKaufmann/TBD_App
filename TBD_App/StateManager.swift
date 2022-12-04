@@ -24,4 +24,12 @@ class StateManager: ObservableObject {
     func setLoop(value: Bool) {
         loopIsActiv = value
     }
+    
+    func checkIfLoopIsOver() -> Bool {
+        if loopStartDate < Date.now {
+            return true
+        } else {
+            return false
+        }
+    }
 }
