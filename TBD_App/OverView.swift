@@ -12,6 +12,8 @@ struct OverView: View {
     //Implement Array with separate View
     private var data: [Int] = Array(1...4)
     private let adaptiveColumns = [GridItem(.adaptive(minimum: 170))]
+    @StateObject var dataController = DataController()
+
     
     var body: some View {
         
@@ -35,7 +37,7 @@ struct OverView: View {
                 }
             }
             .padding()
-            .navigationTitle("Hello NAME")
+            .navigationTitle("Hello " + dataController.getUser())
             
                 
                 

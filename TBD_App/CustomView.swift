@@ -16,6 +16,7 @@ struct CustomView: View {
     @State var socialGoal: String = ""
     @State var meTimeGoal: String = ""
     @State var data: String = ""
+    @State private var selection: String? = nil
     
     var inputHeight = 25.0;
     var inputWidth = 70.0;
@@ -193,21 +194,19 @@ struct CustomView: View {
                     Spacer()
                     
                     // Button
-                    
+                    NavigationLink(destination: OverView(), tag: "OverView", selection: $selection) {EmptyView()}
                     Button(action: {
-                        print("Button pressed")
                         guard !drinkInput.isEmpty else {return}
                         guard !activityGoal.isEmpty else {return}
                         guard !socialGoal.isEmpty else {return}
                         guard !meTimeGoal.isEmpty else {return}
-                        print("Nothing empty")
                         dataController.addGoals(param1: drinkInput, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
-                        print("Func addCustomData() has been executeed")
                         drinkInput = ""
                         activityGoal = ""
                         socialGoal = ""
                         meTimeGoal = ""
-                        
+                        StateManager.shared.setStartDate()
+                        self.selection = "OverView"
                     }, label: {
                         Text("save").font(.system(size: 16))
                     })
