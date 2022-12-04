@@ -19,7 +19,8 @@ struct TBD_AppApp: App {
              */
             //CustomView()
             //ResultView()
-            CoreDataManager()
+            //CoreDataManager()
+            StartView()
         }
     }
 }

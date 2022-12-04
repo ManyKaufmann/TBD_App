@@ -13,7 +13,7 @@ struct ResultView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            var entityToday = dataController.savedEntities[dataController.savedEntities.count-1]
+            var entityToday = dataController.customEntities[dataController.customEntities.count-1]
             Text("Your Progress")
             Text("Drink " + String(format: "%.1f", entityToday.drinkCurrent)+"/"+String(format: "%.1f", entityToday.drinkGoal))
             Text("Activity " + String(format: "%.1f", entityToday.activityCurrent)+"/"+String(format: "%.1f", entityToday.activityGoal))

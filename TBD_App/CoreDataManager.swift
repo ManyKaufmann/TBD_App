@@ -12,10 +12,10 @@ struct CoreDataManager: View {
     @StateObject var dataController = DataController()
     
     var body: some View {
-        var entityToday = dataController.savedEntities[dataController.savedEntities.count-1]
+        var entityToday = dataController.customEntities[dataController.customEntities.count-1]
         VStack{
             List{
-                ForEach(dataController.savedEntities) { entity in
+                ForEach(dataController.customEntities) { entity in
                     Text("Your Progress")
                     Text("Drink " + String(format: "%.1f", entity.drinkCurrent)+"/"+String(format: "%.1f", entity.drinkGoal))
                     Text("Activity " + String(format: "%.1f", entity.activityCurrent)+"/"+String(format: "%.1f", entity.activityGoal))

@@ -10,7 +10,8 @@ import CoreData
 
 class DataController: ObservableObject {
     let container: NSPersistentContainer
-    @Published var savedEntities: [CustomData] = []
+    @Published var customEntities: [CustomData] = []
+    @Published var userEntities: [UserData] = []
     
     init() {
         container = NSPersistentContainer(name: "CustomDataModel")
@@ -28,7 +29,7 @@ class DataController: ObservableObject {
         let request = NSFetchRequest<CustomData>(entityName: "CustomData")
         
         do {
-            savedEntities = try container.viewContext.fetch(request)
+            customEntities = try container.viewContext.fetch(request)
         } catch let error {
             print("Error fetching. \(error)")
         }
@@ -46,8 +47,15 @@ class DataController: ObservableObject {
         print(Date.now)
     }
     
+    func addUser(valueToAdd: String){
+        let newUserData = UserData(context: container.viewContext)
+        newUserData.name = valueToAdd
+        print("new User added " + valueToAdd)
+        saveData()
+    }
+    
     func addData(valueToAdd: String, caseNr: Int){
-        var entityToday = savedEntities[savedEntities.count-1]
+        var entityToday = customEntities[customEntities.count-1]
         switch caseNr {
         case 1:
             entityToday.drinkCurrent += (valueToAdd as NSString).floatValue
@@ -81,7 +89,7 @@ class DataController: ObservableObject {
     
     func deleteData(indexSet: IndexSet){
         guard let index = indexSet.first else {return}
-        let entity = savedEntities[index]
+        let entity = customEntities[index]
         container.viewContext.delete(entity)
         saveData()
     }
