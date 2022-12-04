@@ -17,7 +17,6 @@ struct OverView: View {
     
     var body: some View {
         
-        NavigationView{
             LazyVGrid(columns: adaptiveColumns, spacing: 20){
                 ForEach (data, id: \.self) {
                     number in ZStack {
@@ -38,12 +37,8 @@ struct OverView: View {
             }
             .padding()
             .navigationTitle("Hello " + dataController.getUser())
-            
-                
-                
-            
+            .navigationBarBackButtonHidden(true)
         }
-    }
 }
 
 struct OverView_Previews: PreviewProvider {

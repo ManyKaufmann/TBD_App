@@ -51,6 +51,7 @@ struct StartView: View {
                 )
             }
         }.navigationTitle("Back")
+            .navigationBarBackButtonHidden(false)
     }
 }
 

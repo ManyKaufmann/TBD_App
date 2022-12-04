@@ -25,7 +25,6 @@ struct CustomView: View {
 
     
     var body: some View {
-        NavigationView {
             VStack{
                 HStack{
                     Text("Hi " + dataController.getUser() + " Customize your well beeing")
@@ -222,7 +221,7 @@ struct CustomView: View {
             .padding(.top, 50.0)
             .padding()
         }
-    }
+    
 }
 
 struct CustomView_Previews: PreviewProvider {
