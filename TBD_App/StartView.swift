@@ -49,6 +49,19 @@ struct StartView: View {
                     RoundedRectangle(cornerRadius: 5)
                         .stroke(.indigo.opacity(0.8), lineWidth: 1)
                 )
+                
+                Button(){
+                    print("Data removed")
+                }label: {
+                    Text("Reset All Data").font(.system(size: 16))
+                }
+                .frame(width: 140.0, height: 40.0)
+                .foregroundColor(Color.indigo)
+                .cornerRadius(0)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(.indigo.opacity(0.8), lineWidth: 1)
+                )
             }
         }.navigationTitle("Back")
             .navigationBarBackButtonHidden(false)

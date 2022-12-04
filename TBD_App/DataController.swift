@@ -12,6 +12,7 @@ class DataController: ObservableObject {
     let container: NSPersistentContainer
     @Published var customEntities: [CustomData] = []
     @Published var userEntities: [UserData] = []
+
     
     init() {
         container = NSPersistentContainer(name: "CustomDataModel")
@@ -100,8 +101,15 @@ class DataController: ObservableObject {
     
     func deleteData(indexSet: IndexSet){
         guard let index = indexSet.first else {return}
-        let entity = customEntities[index]
-        container.viewContext.delete(entity)
+        let customEntity = customEntities[index]
+        container.viewContext.delete(customEntity)
+        saveData()
+    }
+    
+    func deleteAllData(){
+        for index in customEntities {
+
+        }
         saveData()
     }
 }
