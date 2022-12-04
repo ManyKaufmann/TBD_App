@@ -26,14 +26,21 @@ class DataController: ObservableObject {
     }
     
     func fetchCustomData() {
-        let request = NSFetchRequest<CustomData>(entityName: "CustomData")
-        
+        let customDataRequest = NSFetchRequest<CustomData>(entityName: "CustomData")
         do {
-            customEntities = try container.viewContext.fetch(request)
+            customEntities = try container.viewContext.fetch(customDataRequest)
         } catch let error {
-            print("Error fetching. \(error)")
+            print("Error fetching CustomData. \(error)")
+        }
+        
+        let userDataRequest = NSFetchRequest<UserData>(entityName: "UserData")
+        do {
+            userEntities = try container.viewContext.fetch(userDataRequest)
+        } catch let error {
+            print("Error fetching UserData. \(error)")
         }
     }
+    
     
     func addGoals(param1: String, param2: String, param3: String, param4: String) {
         let newCustomData = CustomData(context: container.viewContext)
@@ -47,6 +54,10 @@ class DataController: ObservableObject {
         print(Date.now)
     }
     
+    func getUser() -> String{
+        return String(userEntities[userEntities.count-1].name ?? " no user found ")
+    }
+    
     func addUser(valueToAdd: String){
         let newUserData = UserData(context: container.viewContext)
         newUserData.name = valueToAdd
@@ -55,7 +66,7 @@ class DataController: ObservableObject {
     }
     
     func addData(valueToAdd: String, caseNr: Int){
-        var entityToday = customEntities[customEntities.count-1]
+        let entityToday = customEntities[customEntities.count-1]
         switch caseNr {
         case 1:
             entityToday.drinkCurrent += (valueToAdd as NSString).floatValue

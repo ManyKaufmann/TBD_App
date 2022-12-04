@@ -28,13 +28,13 @@ struct StartView: View {
                     .fixedSize()
 
                 Spacer().frame(height: 120)
-                NavigationLink(destination: CustomView(), tag: "CustomView",
-                selection: $selection) {CustomView()}
+                NavigationLink(destination: CustomView(), tag: "CustomView", selection: $selection) {EmptyView()}
                 
                 
                 Button(){
                     guard !userName.isEmpty else {return}
-                    //dataController.addUser(valueToAdd: userName)
+                    dataController.addUser(valueToAdd: userName)
+                    userName = ""
                     self.selection = "CustomView"
                 }label: {
                     Text("Start").font(.system(size: 16))

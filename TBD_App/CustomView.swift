@@ -24,8 +24,7 @@ struct CustomView: View {
         NavigationView {
             VStack{
                 HStack{
-                    Text("Customize your well beeing")
-                        .bold()
+                    Text("Hi " + dataController.getUser() + " Customize your well beeing")
                 }
                 Spacer().frame(height: 40)
                 VStack(alignment: .center){
