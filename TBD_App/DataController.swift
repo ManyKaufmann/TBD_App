@@ -83,6 +83,23 @@ class DataController: ObservableObject {
         saveData()
     }
     
+    func updateGoal(valueToAdd: String, caseNr: Int){
+        let entityToday = customEntities[customEntities.count-1]
+        switch caseNr {
+        case 1:
+            entityToday.drinkGoal = (valueToAdd as NSString).floatValue
+        case 2:
+            entityToday.activityGoal = (valueToAdd as NSString).floatValue
+        case 3:
+            entityToday.socialGoal = (valueToAdd as NSString).floatValue
+        case 4:
+            entityToday.meTimeGoal = (valueToAdd as NSString).floatValue
+        default:
+            print("No Case")
+        }
+        saveData()
+    }
+    
     // Test func
     func update(entity: CustomData){
         let newData = ("1.0" as NSString).floatValue

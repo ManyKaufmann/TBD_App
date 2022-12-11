@@ -10,8 +10,7 @@ import CoreData
 
 struct CustomView: View {
     @StateObject var dataController = DataController()
-    @State var drinkInput: String = ""
-    @State var drinkInputAsFloat: Float = 1.0
+    @State var drinkGoal: String = ""
     @State var activityGoal: String = ""
     @State var socialGoal: String = ""
     @State var meTimeGoal: String = ""
@@ -40,7 +39,7 @@ struct CustomView: View {
                             HStack{
                                 Text("Daily").bold()
                                 
-                                TextField("in liter", text: $drinkInput)
+                                TextField("in liter", text: $drinkGoal)
                                     .frame(width: inputWidth, height: inputHeight)
                                     .padding(.leading, 10.0)
                                     .overlay(
@@ -50,27 +49,6 @@ struct CustomView: View {
                                 
                             }.font(.system(size: 13))
                                 .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                        HStack{
-                            Button(){
-                                drinkInputAsFloat += 0.1
-                            }label: {
-                                Text("+").font(.system(size: 30).bold())
-                            }
-                            .frame(width: btnSize, height: btnSize)
-                            .foregroundColor(Color.white)
-                            .background(Color.green)
-                            .cornerRadius(5)
-                            
-                            Button(){
-                                drinkInputAsFloat += 0.1
-                            }label: {
-                                Text("-").font(.system(size: 30).bold())
-                            }
-                            .frame(width: btnSize, height: btnSize)
-                            .foregroundColor(Color.white)
-                            .background(Color.red)
-                            .cornerRadius(5)
                         }
                     }
                     Spacer().frame(height: distanceBetweenBlocks)
@@ -195,15 +173,19 @@ struct CustomView: View {
                     // Button
                     NavigationLink(destination: OverView(), tag: "OverView", selection: $selection) {EmptyView()}
                     Button(action: {
-                        guard !drinkInput.isEmpty else {return}
-                        guard !activityGoal.isEmpty else {return}
-                        guard !socialGoal.isEmpty else {return}
-                        guard !meTimeGoal.isEmpty else {return}
-                        dataController.addGoals(param1: drinkInput, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
-                        drinkInput = ""
-                        activityGoal = ""
-                        socialGoal = ""
-                        meTimeGoal = ""
+                        if drinkGoal.isEmpty {
+                            drinkGoal = "0.0"
+                        }
+                        if activityGoal.isEmpty {
+                            activityGoal = "0.0"
+                        }
+                        if socialGoal.isEmpty {
+                            socialGoal = "0.0"
+                        }
+                        if meTimeGoal.isEmpty {
+                            meTimeGoal = "0.0"
+                        }
+                        dataController.addGoals(param1: drinkGoal, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
                         StateManager.shared.setStartDate()
                         self.selection = "OverView"
                     }, label: {
