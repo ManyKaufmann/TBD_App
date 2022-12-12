@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OverView: View {
     @State private var showingSheet = false
+    @State var fill: CGFloat = 0
     //Implement Array with separate View
     private var data: [Int] = Array(1...4)
     private let adaptiveColumns = [GridItem(.adaptive(minimum: 170))]
@@ -16,8 +17,7 @@ struct OverView: View {
     
     
     var body: some View {
-        
-            
+        var entityToday = dataController.customEntities[dataController.customEntities.count-1]
     
         NavigationView {
             VStack {
@@ -26,7 +26,58 @@ struct OverView: View {
                     .fontWeight(.medium)
                     .foregroundColor(Color.black)
                 
-                NavigationLink(destination: TrackWaterView()) {
+                VStack{
+                    HStack{
+                        //WATER
+                        Circle()
+                            .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
+                        
+                        Circle()
+                            
+                                  
+
+                            .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
+                            .rotationEffect(.init(degrees: -90))
+                            .animation(Animation.linear, value: 3)
+                        
+                            .padding(20)
+                        
+                        Circle()
+                            .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
+                        
+                        Circle()
+                            .trim(from: 0, to: self.fill)
+                            .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
+                            .rotationEffect(.init(degrees: -90))
+                            .animation(Animation.linear, value: 3)
+                    }
+                    HStack{
+                        Circle()
+                            .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
+                        
+                        Circle()
+                            .trim(from: 0, to: self.fill)
+                            .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
+                            .rotationEffect(.init(degrees: -90))
+                            .animation(Animation.linear, value: 3)
+                        
+                            .padding(20)
+                        
+                        Circle()
+                            .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
+                        
+                        Circle()
+                            .trim(from: 0, to: self.fill)
+                            .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
+                            .rotationEffect(.init(degrees: -90))
+                            .animation(Animation.linear, value: 3)
+                    }
+                    
+                }
+                
+                
+                
+          /*      NavigationLink(destination: TrackWaterView()) {
                     Text("Water")
                         .frame(minWidth: 0, maxWidth: 300)
                         .padding()
@@ -37,7 +88,7 @@ struct OverView: View {
                 }
                 .padding(20)
                 
-                
+               */
                 
                 /*    LazyVGrid(columns: adaptiveColumns, spacing: 20){
                  ForEach (data, id: \.self) {
