@@ -17,8 +17,9 @@ struct OverView: View {
     
     
     var body: some View {
+        var circleSize = 100
         var entityToday = dataController.customEntities[dataController.customEntities.count-1]
-    
+        
         NavigationView {
             VStack {
                 Text("Over View")
@@ -28,46 +29,72 @@ struct OverView: View {
                 
                 VStack{
                     HStack{
-                        //WATER
-                        Circle()
-                            .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
+                        ZStack{
+                            ZStack{
+                                //WATER
+                                //CIRCLE GOAL
+                                Circle()
+                                //  .trim(from: fill, to: CGFloat(entityToday.drinkGoal))
+                                    .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
+                                    .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
+                                
+                                //CIRCLE CURRENT STATE
+                                Circle()
+                                
+                                    .trim(from: fill, to: CGFloat(entityToday.drinkGoal))
+                                
+                                    .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
+                                    .stroke(Color.pink, style:
+                                                StrokeStyle(lineWidth: 30))
+                                    .rotationEffect(.init(degrees: -90))
+                                    .animation(Animation.linear, value: 3)
+                            }
+                        }
+                                    .padding(20)
+                           
                         
-                        Circle()
-                            .trim(from: 0, to: CGFloat(entityToday.drinkCurrent))
-                                  
-
-                            .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
-                            .rotationEffect(.init(degrees: -90))
-                            .animation(Animation.linear, value: 3)
                         
-                            .padding(20)
-                        
-                        Circle()
-                            .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
-                        
-                        Circle()
-                            .trim(from: 0, to: self.fill)
-                            .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
-                            .rotationEffect(.init(degrees: -90))
-                            .animation(Animation.linear, value: 3)
+                        //ACTIVITY
+                        //CIRCLE GOAL
+                        ZStack{
+                            ZStack{
+                                Circle()
+                                    .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
+                                    .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
+                                //CIRCLE CURRENT STATE
+                                Circle()
+                                    .trim(from: 0, to: self.fill)
+                                    .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
+                                    .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
+                                    .rotationEffect(.init(degrees: -90))
+                                    .animation(Animation.linear, value: 3)
+                            }
+                        }
                     }
                     HStack{
+                        //ME TIME
+                        //CIRCLE GOAL
                         Circle()
+                            .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
                             .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
-                        
+                        //CIRCLE CURRENT STATE
                         Circle()
                             .trim(from: 0, to: self.fill)
+                            .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
                             .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                             .rotationEffect(.init(degrees: -90))
                             .animation(Animation.linear, value: 3)
                         
                             .padding(20)
-                        
+                        //SOCIAL
+                        //CIRCLE GOAL
                         Circle()
+                            .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
                             .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
-                        
+                        //CIRCLE CURRENT STATE
                         Circle()
                             .trim(from: 0, to: self.fill)
+                            .size(width: CGFloat(circleSize), height: CGFloat(circleSize))
                             .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                             .rotationEffect(.init(degrees: -90))
                             .animation(Animation.linear, value: 3)
@@ -77,18 +104,18 @@ struct OverView: View {
                 
                 
                 
-          /*      NavigationLink(destination: TrackWaterView()) {
-                    Text("Water")
-                        .frame(minWidth: 0, maxWidth: 300)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(.black)
-                        .cornerRadius(40)
-                        .font(.title)
-                }
-                .padding(20)
-                
-               */
+                /*      NavigationLink(destination: TrackWaterView()) {
+                 Text("Water")
+                 .frame(minWidth: 0, maxWidth: 300)
+                 .padding()
+                 .foregroundColor(.white)
+                 .background(.black)
+                 .cornerRadius(40)
+                 .font(.title)
+                 }
+                 .padding(20)
+                 
+                 */
                 
                 /*    LazyVGrid(columns: adaptiveColumns, spacing: 20){
                  ForEach (data, id: \.self) {
@@ -116,8 +143,9 @@ struct OverView: View {
             }
         }
     }
-
 }
+
+
 
 struct OverView_Previews: PreviewProvider {
     static var previews: some View {

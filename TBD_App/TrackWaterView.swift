@@ -17,7 +17,7 @@ struct TrackWaterView: View {
             ZStack{
                 
                 Circle()
-                    .trim(from: fill, to: CGFloat(entityToday.drinkGoal))
+               //     .trim(from: fill, to: CGFloat(entityToday.drinkGoal))
                     .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
                 
                 Circle()
