@@ -33,7 +33,7 @@ struct OverView: View {
                             .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
                         
                         Circle()
-                            
+                            .trim(from: 0, to: CGFloat(entityToday.drinkCurrent))
                                   
 
                             .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))

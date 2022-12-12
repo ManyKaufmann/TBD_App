@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct TrackWaterView: View {
+    @StateObject var dataController = DataController()
     @State var fill: CGFloat = 0
+    
     var body: some View {
+        var entityToday = dataController.customEntities[dataController.customEntities.count-1]
         ZStack{
             ZStack{
                 
                 Circle()
+                    .trim(from: fill, to: CGFloat(entityToday.drinkGoal))
                     .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
                 
                 Circle()
-                    .trim(from: 0, to: self.fill)
+                    //.trim(from: fill, to: CGFloat(entityToday.drinkGoal))
                     .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                     .rotationEffect(.init(degrees: -90))
                     .animation(Animation.linear, value: 3)
@@ -30,10 +34,7 @@ struct TrackWaterView: View {
             .padding(50)
         }
         .onTapGesture {
-            for x in 0...100 {
-                self.fill += 0.01
-            }
-                
+            self.fill += 0.01
             }
         }
     }
