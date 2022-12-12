@@ -21,12 +21,13 @@ struct TrackWaterView: View {
                     .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
                 
                 Circle()
-                    //.trim(from: fill, to: CGFloat(entityToday.drinkGoal))
+                    //.trim(from: CGFloat(entityToday.drinkGoal), to: fill)
+                    .trim(from: fill, to: CGFloat(entityToday.drinkGoal))
                     .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                     .rotationEffect(.init(degrees: -90))
                     .animation(Animation.linear, value: 3)
-                
-                Text("\(Int(self.fill)) dl")
+  
+                Text("\(String(format: "%.1f", self.fill)) l")
                     .foregroundColor(.pink)
                     .font(.system(size: 52))
                 
