@@ -171,7 +171,7 @@ struct CustomView: View {
                     Spacer()
                     
                     // Button
-                    NavigationLink(destination: OverView(), tag: "OverView", selection: $selection) {EmptyView()}
+                    NavigationLink(destination: ResultView(), tag: "ResultView", selection: $selection) {EmptyView()}
                     Button(action: {
                         if drinkGoal.isEmpty {
                             drinkGoal = "0.0"
@@ -187,7 +187,7 @@ struct CustomView: View {
                         }
                         dataController.addGoals(param1: drinkGoal, param2: activityGoal, param3: socialGoal, param4: meTimeGoal)
                         StateManager.shared.setStartDate()
-                        self.selection = "OverView"
+                        self.selection = "ResultView"
                     }, label: {
                         Text("Save").font(.system(size: 24, weight: .medium, design: .rounded))
                     })

@@ -10,6 +10,7 @@ import CoreData
 
 struct ResultView: View {
     @StateObject var dataController = DataController()
+    @State private var showingSheet = false
     
     var body: some View {
         var entityToday = dataController.customEntities[dataController.customEntities.count-1]
@@ -20,27 +21,46 @@ struct ResultView: View {
                     .font(.system(size: 40, weight: .medium, design: .rounded))
             }
             
+            
+        
             VStack(alignment: .leading) {
+                Button("Show Drink") {
+                    showingSheet.toggle()
+                    print("Button pressed")
+                }
+                .sheet(isPresented: $showingSheet) {
+                    TrackWaterView()
+                }
+                .foregroundColor(.white)
+                .font(.system(size: 24, weight: .medium, design: .rounded))
                 Text("Drink " + String(format: "%.1f", entityToday.drinkCurrent)+"/"+String(format: "%.1f", entityToday.drinkGoal))
                     .foregroundColor(Color.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
+                        ProgressView(value: entityToday.drinkCurrent, total: entityToday.drinkGoal)
+                            .scaleEffect(x: 4, y: 10, anchor: .center)
+                            .cornerRadius(5)
+                            .accentColor(Color.yellow)
+                            .frame(width: 350, height: 50)
+                    }.padding()
+                        .background(Color.pink)
+                        .cornerRadius(30)
                 
-                //ProgressView(value: entityToday.drinkCurrent, total: entityToday.drinkGoal)
-                ProgressView(value: 0.5, total: 1)
-                    .accentColor(Color.pink)
-                    .scaleEffect(x: 4, y: 10, anchor: .center)
-                    .cornerRadius(5)
-                    .accentColor(Color.yellow)
-                    .frame(width: 350, height: 50)
-            }.padding()
-                .background(Color.pink)
-                .cornerRadius(30)
-            
+                
+                
+
             VStack(alignment: .leading) {
+                Button("Show Activity") {
+                    showingSheet.toggle()
+                    print("Button pressed")
+                }
+                .sheet(isPresented: $showingSheet) {
+                    TrackWaterView()
+                }
+                .foregroundColor(.white)
+                .font(.system(size: 24, weight: .medium, design: .rounded))
                 Text("Activity " + String(format: "%.1f", entityToday.activityCurrent)+"/"+String(format: "%.1f", entityToday.activityGoal))
                     .foregroundColor(Color.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
-                
                 ProgressView(value: entityToday.activityCurrent, total: entityToday.activityGoal)
                     .accentColor(Color.pink)
                     .scaleEffect(x: 4, y: 10, anchor: .center)
@@ -52,6 +72,15 @@ struct ResultView: View {
                 .cornerRadius(30)
             
             VStack(alignment: .leading) {
+                Button("Show Social") {
+                    showingSheet.toggle()
+                    print("Button pressed")
+                }
+                .sheet(isPresented: $showingSheet) {
+                    TrackWaterView()
+                }
+                .foregroundColor(.white)
+                .font(.system(size: 24, weight: .medium, design: .rounded))
                 Text("Social " + String(format: "%.1f", entityToday.socialCurrent)+"/"+String(format: "%.1f", entityToday.socialGoal))
                     .foregroundColor(Color.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
@@ -67,6 +96,15 @@ struct ResultView: View {
                 .cornerRadius(30)
             
             VStack(alignment: .leading) {
+                Button("Show MeTime") {
+                    showingSheet.toggle()
+                    print("Button pressed")
+                }
+                .sheet(isPresented: $showingSheet) {
+                    TrackWaterView()
+                }
+                .foregroundColor(.white)
+                .font(.system(size: 24, weight: .medium, design: .rounded))
                 Text("MeTime " + String(format: "%.1f", entityToday.meTimeCurrent)+"/"+String(format: "%.1f", entityToday.meTimeGoal))
                     .foregroundColor(Color.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
