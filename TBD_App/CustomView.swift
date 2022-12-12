@@ -171,7 +171,7 @@ struct CustomView: View {
                     Spacer()
                     
                     // Button
-                    NavigationLink(destination: OverView(), tag: "OverView", selection: $selection) {EmptyView()}
+                    NavigationLink(destination: TrackWaterView(), tag: "OverView", selection: $selection) {EmptyView()}
                     Button(action: {
                         if drinkGoal.isEmpty {
                             drinkGoal = "0.0"

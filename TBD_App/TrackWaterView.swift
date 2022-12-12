@@ -33,8 +33,12 @@ struct TrackWaterView: View {
             }
             .padding(50)
         }
+        
+        //Button("Add") {
+        
+        
         .onTapGesture {
-            self.fill += 0.01
+           self.fill += 0.01
             }
         }
     }
