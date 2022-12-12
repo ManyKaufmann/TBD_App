@@ -25,7 +25,8 @@ struct ResultView: View {
                     .foregroundColor(Color.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
                 
-                ProgressView(value: entityToday.drinkCurrent, total: entityToday.drinkGoal)
+                //ProgressView(value: entityToday.drinkCurrent, total: entityToday.drinkGoal)
+                ProgressView(value: 0.5, total: 1)
                     .accentColor(Color.pink)
                     .scaleEffect(x: 4, y: 10, anchor: .center)
                     .cornerRadius(5)
