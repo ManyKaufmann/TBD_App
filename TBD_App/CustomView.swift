@@ -189,14 +189,12 @@ struct CustomView: View {
                         StateManager.shared.setStartDate()
                         self.selection = "OverView"
                     }, label: {
-                        Text("save").font(.system(size: 16))
+                        Text("Save").font(.system(size: 24, weight: .medium, design: .rounded))
                     })
-                    .frame(width: 140.0, height: 40.0)
-                    .foregroundColor(Color.indigo)
-                    .cornerRadius(0)
-                    .overlay(RoundedRectangle(cornerRadius: 5)
-                        .stroke(.indigo.opacity(0.8), lineWidth: 1)
-                    )
+                    .frame(width: 300, height: 60)
+                    .foregroundColor(Color.white)
+                    .background(Color.pink)
+                    .cornerRadius(30)
                 }
                 Spacer().frame(height: 100)
             }
