@@ -54,7 +54,7 @@ struct TrackMeTimeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
                 
-                    TextField("in h", text: $data)
+                    TextField("0.0 h", text: $data)
                         .frame(width: inputWidth, height: inputHeight)
                         .padding(5.0)
                         .overlay(
@@ -88,7 +88,7 @@ struct TrackMeTimeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
                 
-                    TextField("in min", text: $goal)
+                    TextField("0.0 h", text: $goal)
                         .frame(width: inputWidth, height: inputHeight)
                         .padding(5.0)
                         .overlay(
@@ -123,7 +123,7 @@ struct TrackMeTimeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
                 
-                    TextField("in min", text: $weeklyGoal)
+                    TextField("0.0 h", text: $weeklyGoal)
                         .frame(width: inputWidth, height: inputHeight)
                         .padding(5.0)
                         .overlay(

@@ -29,7 +29,7 @@ struct CustomView: View {
     var body: some View {
             VStack{
                 HStack{
-                    Text("Hi " + dataController.getUser() + " Set your goals")
+                    Text("Hi " + dataController.getUser() + ", set your goals!")
                         .foregroundColor(.pink)
                         .font(.system(size: 24, weight: .medium, design: .rounded))
                 }
@@ -44,7 +44,7 @@ struct CustomView: View {
                             Text("Drink Daily Goal:").font(.system(size: 13))
                                 .frame(maxWidth: 150.0, alignment: .leading)
                             
-                            TextField("in liter", text: $drinkGoal)
+                            TextField("0.0 l", text: $drinkGoal)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(
@@ -64,7 +64,7 @@ struct CustomView: View {
                                 .frame(maxWidth: 30.0, alignment: .leading)
                             Text("Activity Daily Goal:").font(.system(size: 13))
                                 .frame(maxWidth: 150.0, alignment: .leading)
-                            TextField("in hours", text: $activityGoal)
+                            TextField("0.0 h", text: $activityGoal)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(
@@ -78,7 +78,7 @@ struct CustomView: View {
                                 .frame(maxWidth: 30.0, alignment: .leading)
                             Text("Activity Weekly Goal:").font(.system(size: 13))
                                 .frame(maxWidth: 150.0, alignment: .leading)
-                            TextField("in hours", text: $activityGoalWeekly)
+                            TextField("0.0 h", text: $activityGoalWeekly)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(
@@ -99,7 +99,7 @@ struct CustomView: View {
                                 .frame(maxWidth: 30.0, alignment: .leading)
                             Text("Social Daily Goal:").font(.system(size: 13))
                                 .frame(maxWidth: 150.0, alignment: .leading)
-                            TextField("in hours", text: $socialGoal)
+                            TextField("0.0 h", text: $socialGoal)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(
@@ -113,7 +113,7 @@ struct CustomView: View {
                                 .frame(maxWidth: 30.0, alignment: .leading)
                             Text("Social Weekly Goal:").font(.system(size: 13))
                                 .frame(maxWidth: 150.0, alignment: .leading)
-                            TextField("in hours", text: $socialGoalWeekly)
+                            TextField("0.0 h", text: $socialGoalWeekly)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(
@@ -134,7 +134,7 @@ struct CustomView: View {
                                 .frame(maxWidth: 30.0, alignment: .leading)
                             Text("MeTime Daily Goal:").font(.system(size: 13))
                                 .frame(maxWidth: 150.0, alignment: .leading)
-                            TextField("in hours", text: $meTimeGoal)
+                            TextField("0.0 h", text: $meTimeGoal)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(
@@ -148,7 +148,7 @@ struct CustomView: View {
                                 .frame(maxWidth: 30.0, alignment: .leading)
                             Text("MeTime Weekly Goal:").font(.system(size: 13))
                                 .frame(maxWidth: 150.0, alignment: .leading)
-                            TextField("in hours", text: $meTimeGoalWeekly)
+                            TextField("0.0 h", text: $meTimeGoalWeekly)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(

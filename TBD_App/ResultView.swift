@@ -21,6 +21,7 @@ struct ResultView: View {
                 Text("Progress today")
                     .foregroundColor(Color.pink)
                     .font(.system(size: 40, weight: .medium, design: .rounded))
+                
             }
             //Water
             NavigationLink(destination: TrackWaterView(), tag: "TrackWaterView", selection: $selection) {
@@ -31,7 +32,7 @@ struct ResultView: View {
                     }
                     .foregroundColor(.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
-                    Text("Drink Daily" + String(format: "%.1f", entityToday.drinkCurrent)+"/"+String(format: "%.1f", entityToday.drinkGoal))
+                    Text("Daily Goal " + String(format: "%.1f", entityToday.drinkCurrent)+" / "+String(format: "%.1f", entityToday.drinkGoal))
                         .foregroundColor(Color.white)
                         .font(.system(size: txtContentSize, weight: .medium, design: .rounded))
                     
@@ -57,19 +58,20 @@ struct ResultView: View {
                     // }
                     .foregroundColor(.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
-                    Text("Activity Daily" + String(format: "%.1f", entityToday.activityCurrent)+"/"+String(format: "%.1f", entityToday.activityGoal))
+                    Text("Daily Goal " + String(format: "%.1f", entityToday.activityCurrent)+" / "+String(format: "%.1f", entityToday.activityGoal))
                         .foregroundColor(Color.white)
                         .font(.system(size: txtContentSize, weight: .medium, design: .rounded))
                     ProgressView(value: entityToday.activityCurrent, total: entityToday.activityGoal)
-                        .accentColor(Color.pink)
                         .cornerRadius(5)
                         .accentColor(Color.yellow)
                         .frame(width: 350, height: 25)
-                    Text("Activity Weekly" + String(format: "%.1f", entityToday.activityCurrent)+"/"+String(format: "%.1f", entityToday.activityGoalWeekly))
+                
+                   
+                    
+                    Text("Weekly Goal " + String(format: "%.1f", entityToday.activityCurrent)+" / "+String(format: "%.1f", entityToday.activityGoalWeekly))
                         .foregroundColor(Color.white)
                         .font(.system(size: txtContentSize, weight: .medium, design: .rounded))
                     ProgressView(value: entityToday.activityCurrent, total: entityToday.activityGoalWeekly)
-                        .accentColor(Color.pink)
                         .cornerRadius(5)
                         .accentColor(Color.yellow)
                         .frame(width: 350, height: 25)
@@ -92,22 +94,20 @@ struct ResultView: View {
                     // }
                     .foregroundColor(.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
-                    Text("Social Daily" + String(format: "%.1f", entityToday.socialCurrent)+"/"+String(format: "%.1f", entityToday.socialGoal))
+                    Text("Daily Goal " + String(format: "%.1f", entityToday.socialCurrent)+" / "+String(format: "%.1f", entityToday.socialGoal))
                         .foregroundColor(Color.white)
                         .font(.system(size: txtContentSize, weight: .medium, design: .rounded))
                     
                     ProgressView(value: entityToday.socialCurrent, total: entityToday.socialGoal)
-                        .accentColor(Color.pink)
                         .cornerRadius(5)
                         .accentColor(Color.yellow)
                         .frame(width: 350, height: 25)
                     
-                    Text("Social Weekly" + String(format: "%.1f", entityToday.socialCurrent)+"/"+String(format: "%.1f", entityToday.socialGoalWeekly))
+                    Text("Weekly Goal " + String(format: "%.1f", entityToday.socialCurrent)+" / "+String(format: "%.1f", entityToday.socialGoalWeekly))
                         .foregroundColor(Color.white)
                         .font(.system(size: txtContentSize, weight: .medium, design: .rounded))
                     
                     ProgressView(value: entityToday.socialCurrent, total: entityToday.socialGoalWeekly)
-                        .accentColor(Color.pink)
                         .cornerRadius(5)
                         .accentColor(Color.yellow)
                         .frame(width: 350, height: 25)
@@ -119,7 +119,7 @@ struct ResultView: View {
             //ME TIME
             NavigationLink(destination: TrackMeTimeView()){
                 VStack(alignment: .leading) {
-                    Button("Track MeTime") {
+                    Button("Track Me Time") {
                         checkLoop()
                         //   showingSheet.toggle()
                     }
@@ -128,22 +128,20 @@ struct ResultView: View {
               //  }
                 .foregroundColor(.white)
                 .font(.system(size: 24, weight: .medium, design: .rounded))
-                Text("MeTime Daily" + String(format: "%.1f", entityToday.meTimeCurrent)+"/"+String(format: "%.1f", entityToday.meTimeGoal))
+                Text("Daily Goal " + String(format: "%.1f", entityToday.meTimeCurrent)+" / "+String(format: "%.1f", entityToday.meTimeGoal))
                     .foregroundColor(Color.white)
                     .font(.system(size: txtContentSize, weight: .medium, design: .rounded))
                 
                 ProgressView(value: entityToday.meTimeCurrent, total: entityToday.meTimeGoal)
-                    .accentColor(Color.pink)
                     .cornerRadius(5)
                     .accentColor(Color.yellow)
                     .frame(width: 350, height: 25)
                     
-                    Text("MeTime Weekly" + String(format: "%.1f", entityToday.meTimeCurrent)+"/"+String(format: "%.1f", entityToday.meTimeGoalWeekly))
+                    Text("Weekly Goal " + String(format: "%.1f", entityToday.meTimeCurrent)+" / "+String(format: "%.1f", entityToday.meTimeGoalWeekly))
                         .foregroundColor(Color.white)
                         .font(.system(size: txtContentSize, weight: .medium, design: .rounded))
                     
                     ProgressView(value: entityToday.meTimeCurrent, total: entityToday.meTimeGoalWeekly)
-                        .accentColor(Color.pink)
                         .cornerRadius(5)
                         .accentColor(Color.yellow)
                         .frame(width: 350, height: 25)

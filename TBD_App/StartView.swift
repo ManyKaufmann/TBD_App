@@ -17,7 +17,7 @@ struct StartView: View {
         NavigationView {
             
             VStack() {
-                Text("Your Name")
+                Text("Insert your Name")
                     .font(.title)
                     .foregroundColor(Color.pink)
                     .frame(width: 300, height: 60)

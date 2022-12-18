@@ -58,7 +58,7 @@ struct TrackWaterView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
                 
-                    TextField("in liter", text: $data)
+                    TextField("0.0 l", text: $data)
                         .frame(width: inputWidth, height: inputHeight)
                         .padding(5.0)
                         .overlay(
@@ -102,7 +102,7 @@ struct TrackWaterView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
                 
-                    TextField("in liter", text: $goal)
+                    TextField("0.0 l", text: $goal)
                         .frame(width: inputWidth, height: inputHeight)
                         .padding(5.0)
                         .overlay(
