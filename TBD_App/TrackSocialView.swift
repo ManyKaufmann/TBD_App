@@ -82,7 +82,7 @@ struct TrackSocialView: View {
 
             
             HStack(){
-                    Text("Goal")
+                    Text("Daily Goal")
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
