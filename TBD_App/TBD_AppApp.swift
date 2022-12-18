@@ -20,9 +20,9 @@ struct TBD_AppApp: App {
             //CustomView()
             //ResultView()
             //CoreDataManager()
-            //StartView()
+            StartView()
             //OverView()
-            TrackWaterView()
+            //TrackWaterView()
             //DetailView()
         }
     }

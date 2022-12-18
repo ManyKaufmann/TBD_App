@@ -11,8 +11,10 @@ import CoreData
 struct ResultView: View {
     @StateObject var dataController = DataController()
     @State private var showingSheet = false
+    @State private var selection: String? = nil
     
     var body: some View {
+        
         var entityToday = dataController.customEntities[dataController.customEntities.count-1]
         VStack{
             VStack(){
@@ -22,15 +24,13 @@ struct ResultView: View {
             }
             
             
-        
+            NavigationLink(destination: TrackWaterView(), tag: "TrackWaterView", selection: $selection) {EmptyView()}
             VStack(alignment: .leading) {
                 Button("Show Drink") {
-                    showingSheet.toggle()
+                    self.selection = "TrackWaterView"
                     print("Button pressed")
                 }
-                .sheet(isPresented: $showingSheet) {
-                    TrackWaterView()
-                }
+
                 .foregroundColor(.white)
                 .font(.system(size: 24, weight: .medium, design: .rounded))
                 Text("Drink " + String(format: "%.1f", entityToday.drinkCurrent)+"/"+String(format: "%.1f", entityToday.drinkGoal))
@@ -44,8 +44,6 @@ struct ResultView: View {
                     }.padding()
                         .background(Color.pink)
                         .cornerRadius(30)
-                
-                
                 
 
             VStack(alignment: .leading) {
