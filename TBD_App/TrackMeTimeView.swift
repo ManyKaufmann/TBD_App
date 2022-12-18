@@ -14,6 +14,8 @@ struct TrackMeTimeView: View {
     @State var goal: String = ""
     @State var weeklyGoal: String = ""
     @State private var selection: String? = nil
+    @State private var showingAlert = false
+    @State private var goalNotReached  = true
     private var align = 50.0
     var inputHeight = 25.0;
     var inputWidth = 70.0;
@@ -79,6 +81,12 @@ struct TrackMeTimeView: View {
                     .background(Color.pink)
                     .cornerRadius(30)
                     .padding(.trailing, align)
+                    .alert("You reached your Goals!!!", isPresented: $showingAlert) {
+                        Button("Ok"){
+                            showingAlert = false
+                            goalNotReached = false
+                        }
+                    }
             }
 
             

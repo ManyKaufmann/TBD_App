@@ -40,9 +40,6 @@ struct DetailView: View {
                                         .stroke(.gray.opacity(0.5), lineWidth: 2)
                                 )
                             
-                            // Button(){}label: {
-                            //     Text("Add").font(.system(size: 16))
-                            //     }
                             
                                 .font(.system(size: 13))
                                 .frame(maxWidth: .infinity, alignment: .trailing)
@@ -52,10 +49,6 @@ struct DetailView: View {
                         Button(){}label: {
                             Text("Add 0.5 liter").font(.system(size: 16))
                         }
-                        
-                    
-                    
-                
             }
         }
     }

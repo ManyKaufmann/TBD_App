@@ -11,7 +11,6 @@
 		2C2133DB294F14B300624AD4 /* TrackSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2133DA294F14B300624AD4 /* TrackSocialView.swift */; };
 		2C2133DD294F152100624AD4 /* TrackMeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2133DC294F152100624AD4 /* TrackMeTimeView.swift */; };
 		2C75C1AF293CAFB600DAB62A /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75C1AE293CAFB600DAB62A /* StateManager.swift */; };
-		2C9E4A792933961D00EF8D09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E4A782933961D00EF8D09 /* CoreDataManager.swift */; };
 		2CCF83F1292782ED00678188 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF83F0292782ED00678188 /* StartView.swift */; };
 		2CCF83F3292795F600678188 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF83F2292795F600678188 /* CustomView.swift */; };
 		2CCF83F6292BC2BB00678188 /* CustomDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF83F4292BC2BA00678188 /* CustomDataModel.xcdatamodeld */; };
@@ -19,7 +18,6 @@
 		2CCF83FA292BC66600678188 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF83F9292BC66600678188 /* ResultView.swift */; };
 		346F3EE829475FC9003DE798 /* TrackWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F3EE729475FC9003DE798 /* TrackWaterView.swift */; };
 		34746F6F29254B4100B26909 /* TBD_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F6E29254B4100B26909 /* TBD_AppApp.swift */; };
-		34746F7129254B4100B26909 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F7029254B4100B26909 /* ContentView.swift */; };
 		34746F7329254B4200B26909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34746F7229254B4200B26909 /* Assets.xcassets */; };
 		34746F7629254B4200B26909 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34746F7529254B4200B26909 /* Preview Assets.xcassets */; };
 		34746F7829254B4200B26909 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F7729254B4200B26909 /* Persistence.swift */; };
@@ -28,7 +26,6 @@
 		34746F8F29254B4200B26909 /* TBD_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F8E29254B4200B26909 /* TBD_AppUITests.swift */; };
 		34746F9129254B4200B26909 /* TBD_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34746F9029254B4200B26909 /* TBD_AppUITestsLaunchTests.swift */; };
 		34DADB5E292BF86600B89B1D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DADB5D292BF86600B89B1D /* DetailView.swift */; };
-		34DADB60292BF9C400B89B1D /* OverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DADB5F292BF9C400B89B1D /* OverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +50,6 @@
 		2C2133DA294F14B300624AD4 /* TrackSocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSocialView.swift; sourceTree = "<group>"; };
 		2C2133DC294F152100624AD4 /* TrackMeTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMeTimeView.swift; sourceTree = "<group>"; };
 		2C75C1AE293CAFB600DAB62A /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
-		2C9E4A782933961D00EF8D09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2CCF83F0292782ED00678188 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		2CCF83F2292795F600678188 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		2CCF83F5292BC2BA00678188 /* CustomDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CustomDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -62,7 +58,6 @@
 		346F3EE729475FC9003DE798 /* TrackWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWaterView.swift; sourceTree = "<group>"; };
 		34746F6B29254B4100B26909 /* TBD_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBD_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34746F6E29254B4100B26909 /* TBD_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBD_AppApp.swift; sourceTree = "<group>"; };
-		34746F7029254B4100B26909 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34746F7229254B4200B26909 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34746F7529254B4200B26909 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34746F7729254B4200B26909 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -73,7 +68,6 @@
 		34746F8E29254B4200B26909 /* TBD_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBD_AppUITests.swift; sourceTree = "<group>"; };
 		34746F9029254B4200B26909 /* TBD_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBD_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		34DADB5D292BF86600B89B1D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		34DADB5F292BF9C400B89B1D /* OverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +121,6 @@
 				34746F6E29254B4100B26909 /* TBD_AppApp.swift */,
 				2CCF83F7292BC3E000678188 /* DataController.swift */,
 				34DADB5D292BF86600B89B1D /* DetailView.swift */,
-				34746F7029254B4100B26909 /* ContentView.swift */,
 				34746F7229254B4200B26909 /* Assets.xcassets */,
 				34746F7729254B4200B26909 /* Persistence.swift */,
 				34746F7929254B4200B26909 /* TBD_App.xcdatamodeld */,
@@ -136,8 +129,6 @@
 				2CCF83F2292795F600678188 /* CustomView.swift */,
 				2CCF83F4292BC2BA00678188 /* CustomDataModel.xcdatamodeld */,
 				2CCF83F9292BC66600678188 /* ResultView.swift */,
-				34DADB5F292BF9C400B89B1D /* OverView.swift */,
-				2C9E4A782933961D00EF8D09 /* CoreDataManager.swift */,
 				2C75C1AE293CAFB600DAB62A /* StateManager.swift */,
 				346F3EE729475FC9003DE798 /* TrackWaterView.swift */,
 				2C2133D8294F13B600624AD4 /* TrackActivityView.swift */,
@@ -308,16 +299,13 @@
 				34DADB5E292BF86600B89B1D /* DetailView.swift in Sources */,
 				2CCF83F6292BC2BB00678188 /* CustomDataModel.xcdatamodeld in Sources */,
 				2C75C1AF293CAFB600DAB62A /* StateManager.swift in Sources */,
-				34746F7129254B4100B26909 /* ContentView.swift in Sources */,
 				2C2133D9294F13B600624AD4 /* TrackActivityView.swift in Sources */,
-				2C9E4A792933961D00EF8D09 /* CoreDataManager.swift in Sources */,
 				2CCF83F3292795F600678188 /* CustomView.swift in Sources */,
 				2C2133DD294F152100624AD4 /* TrackMeTimeView.swift in Sources */,
 				2CCF83F8292BC3E000678188 /* DataController.swift in Sources */,
 				2C2133DB294F14B300624AD4 /* TrackSocialView.swift in Sources */,
 				346F3EE829475FC9003DE798 /* TrackWaterView.swift in Sources */,
 				34746F7B29254B4200B26909 /* TBD_App.xcdatamodeld in Sources */,
-				34DADB60292BF9C400B89B1D /* OverView.swift in Sources */,
 				34746F6F29254B4100B26909 /* TBD_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

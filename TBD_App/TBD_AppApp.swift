@@ -13,18 +13,9 @@ struct TBD_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            /*
-             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-             */
-            //CustomView()
-            //ResultView()
-            //CoreDataManager()
+        
             StartView()
-            //OverView()
-            //TrackWaterView()
-            //DetailView()
-            //TrackActivityView()
+           
         }
     }
 }

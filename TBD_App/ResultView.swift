@@ -50,12 +50,7 @@ struct ResultView: View {
                 VStack(alignment: .leading) {
                     Button("Track Activity") {
                         checkLoop()
-                        // showingSheet.toggle()
                     }
-                    //.sheet(isPresented: $showingSheet) {
-                    //NavigationLink(destination: TrackActivityView(), tag: "TrackActivityView", selection: $selection) {EmptyView()}
-                    //   TrackActivityView()
-                    // }
                     .foregroundColor(.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
                     Text("Daily Goal " + String(format: "%.1f", entityToday.activityCurrent)+" / "+String(format: "%.1f", entityToday.activityGoal))
@@ -87,11 +82,7 @@ struct ResultView: View {
                 VStack(alignment: .leading) {
                     Button("Track Social") {
                         checkLoop()
-                        //     showingSheet.toggle()
                     }
-                    //  .sheet(isPresented: $showingSheet) {
-                    //      TrackSocialView()
-                    // }
                     .foregroundColor(.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
                     Text("Daily Goal " + String(format: "%.1f", entityToday.socialCurrent)+" / "+String(format: "%.1f", entityToday.socialGoal))
@@ -121,11 +112,7 @@ struct ResultView: View {
                 VStack(alignment: .leading) {
                     Button("Track Me Time") {
                         checkLoop()
-                        //   showingSheet.toggle()
                     }
-                    // .sheet(isPresented: $showingSheet) {
-                    //    TrackMeTimeView()
-              //  }
                 .foregroundColor(.white)
                 .font(.system(size: 24, weight: .medium, design: .rounded))
                 Text("Daily Goal " + String(format: "%.1f", entityToday.meTimeCurrent)+" / "+String(format: "%.1f", entityToday.meTimeGoal))

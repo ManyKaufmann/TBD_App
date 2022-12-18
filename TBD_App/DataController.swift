@@ -125,12 +125,6 @@ class DataController: ObservableObject {
         saveData()
     }
     
-    // Test func
-    func update(entity: CustomData){
-        let newData = ("1.0" as NSString).floatValue
-        entity.drinkCurrent = newData
-        saveData()
-    }
     
     // Refresh Data
     func saveData() {
@@ -142,11 +136,4 @@ class DataController: ObservableObject {
         }
     }
     
-    // Func not finished yet
-    func deleteData(indexSet: IndexSet){
-        guard let index = indexSet.first else {return}
-        let customEntity = customEntities[index]
-        container.viewContext.delete(customEntity)
-        saveData()
-    }
 }

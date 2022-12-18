@@ -149,7 +149,7 @@ struct TrackWaterView: View {
                 }
               //  self.selection = "ResultView"
             }
-            */
+            
             
             .alert("You reached your Goals!!!", isPresented: $showingAlert) {
                 Button("Ok"){
@@ -157,7 +157,7 @@ struct TrackWaterView: View {
                     goalNotReached = false
                 }
             }
-            
+            */
         }
     }
 }
