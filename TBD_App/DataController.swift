@@ -7,12 +7,13 @@
 
 import Foundation
 import CoreData
+import UIKit
+import SwiftUI
 
 class DataController: ObservableObject {
     let container: NSPersistentContainer
     @Published var customEntities: [CustomData] = []
     @Published var userEntities: [UserData] = []
-
     
     init() {
         container = NSPersistentContainer(name: "CustomDataModel")
@@ -83,7 +84,7 @@ class DataController: ObservableObject {
         saveData()
     }
     
-    func updateGoal(valueToAdd: String, caseNr: Int){
+    func setNewGoal(valueToAdd: String, caseNr: Int){
         let entityToday = customEntities[customEntities.count-1]
         switch caseNr {
         case 1:
@@ -120,13 +121,6 @@ class DataController: ObservableObject {
         guard let index = indexSet.first else {return}
         let customEntity = customEntities[index]
         container.viewContext.delete(customEntity)
-        saveData()
-    }
-    
-    func deleteAllData(){
-        for index in customEntities {
-
-        }
         saveData()
     }
 }

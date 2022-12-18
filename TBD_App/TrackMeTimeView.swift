@@ -1,22 +1,19 @@
 //
-//  TrackWaterView.swift
+//  TrackMeTimeView.swift
 //  TBD_App
 //
-//  Created by Many Kaufmann on 12.12.22.
+//  Created by HSLU-N0004388 on 18.12.22.
 //
 
 import SwiftUI
 
-struct TrackWaterView: View {
+struct TrackMeTimeView: View {
     @StateObject var dataController = DataController()
     @State var fill: CGFloat = 0
     @State var data: String = ""
     @State var goal: String = ""
     @State private var selection: String? = nil
     private var align = 50.0
-    @State private var showingAlert = false
-    @State private var goalNotReached  = true
-    
     var inputHeight = 25.0;
     var inputWidth = 70.0;
     
@@ -31,11 +28,11 @@ struct TrackWaterView: View {
                     .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 30))
                 Circle()
                     //.trim(from: CGFloat(entityToday.drinkGoal), to: fill)
-                    .trim(from: fill, to: CGFloat(entityToday.drinkGoal))
+                    .trim(from: fill, to: CGFloat(entityToday.meTimeGoal))
                     .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                     .rotationEffect(.init(degrees: -90))
                     .animation(Animation.linear, value: 3)
-                Text("\(String(format: "%.1f", self.fill)) l")
+                Text("\(String(format: "%.1f", self.fill)) min")
                     .foregroundColor(.pink)
                     .font(.system(size: 52))
             }
@@ -49,7 +46,7 @@ struct TrackWaterView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
                 
-                    TextField("in liter", text: $data)
+                    TextField("in min", text: $data)
                         .frame(width: inputWidth, height: inputHeight)
                         .padding(5.0)
                         .overlay(
@@ -60,54 +57,8 @@ struct TrackWaterView: View {
                         .padding(30)
                 
                     Button() {
-                        dataController.addData(valueToAdd: data, caseNr: 1)
+                        dataController.addData(valueToAdd: data, caseNr: 4)
                         data = ""
-                        if dataController.customEntities[dataController.customEntities.count-1].drinkCurrent >= dataController.customEntities[dataController.customEntities.count-1].drinkGoal && goalNotReached {
-                            showingAlert = true
-                        }
-                        self.selection = "ResultView"
-                    } label: {
-                        Text("Add")
-                            .font(.system(size: 24, weight: .medium, design: .rounded))
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .frame(width: 90, height: 60)
-                    .foregroundColor(Color.white)
-                    .background(Color.pink)
-                    .cornerRadius(30)
-                    .padding(.trailing, align)
-                    .alert("You reached your Goals!!!", isPresented: $showingAlert) {
-                        Button("Ok"){
-                            showingAlert = false
-                            goalNotReached = false
-                        }
-                    }
-            }
-
-            
-            HStack(){
-                    Text("Goal")
-                        .bold()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, align)
-                
-                    TextField("in liter", text: $goal)
-                        .frame(width: inputWidth, height: inputHeight)
-                        .padding(5.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(.gray.opacity(0.5), lineWidth: 2)
-                        )
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(30)
-                
-                    Button() {
-                        dataController.setNewGoal(valueToAdd: goal, caseNr: 1)
-                        data = ""
-                        if dataController.customEntities[dataController.customEntities.count-1].drinkCurrent >= dataController.customEntities[dataController.customEntities.count-1].drinkGoal && goalNotReached {
-                            showingAlert = true
-                        }
                         self.selection = "ResultView"
                     }label: {
                         Text("Add")
@@ -120,38 +71,55 @@ struct TrackWaterView: View {
                     .background(Color.pink)
                     .cornerRadius(30)
                     .padding(.trailing, align)
-                    .alert("You reached your Goals!!!", isPresented: $showingAlert) {
-                        Button("Ok"){
-                            showingAlert = false
-                            goalNotReached = false
-                        }
+            }
+
+            
+            HStack(){
+                    Text("Goal")
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, align)
+                
+                    TextField("in min", text: $goal)
+                        .frame(width: inputWidth, height: inputHeight)
+                        .padding(5.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(.gray.opacity(0.5), lineWidth: 2)
+                        )
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(30)
+                
+                    Button() {
+                        dataController.setNewGoal(valueToAdd: goal, caseNr: 4)
+                        data = ""
+                        self.selection = "ResultView"
+                    }label: {
+                        Text("Add")
+                            .font(.system(size: 24, weight: .medium, design: .rounded))
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .frame(width: 90, height: 60)
+                    .foregroundColor(Color.white)
+                    .background(Color.pink)
+                    .cornerRadius(30)
+                    .padding(.trailing, align)
             }
             
             
-            Button("Add 0.33 dl"){
+            Button("Add 15min"){
                 self.fill += 0.33
-                dataController.addData(valueToAdd: "0.33", caseNr: 1)
+                dataController.addData(valueToAdd: "0.25", caseNr: 2)
                 data = ""
-                if dataController.customEntities[dataController.customEntities.count-1].drinkCurrent >= dataController.customEntities[dataController.customEntities.count-1].drinkGoal && goalNotReached {
-                    showingAlert = true
-                }
                 self.selection = "ResultView"
-            }
-            .alert("You reached your Goals!!!", isPresented: $showingAlert) {
-                Button("Ok"){
-                    showingAlert = false
-                    goalNotReached = false
-                }
             }
         }
     }
 }
-    
 
-
-struct TrackWaterView_Previews: PreviewProvider {
+struct TrackMeTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackWaterView()
+        TrackMeTimeView()
     }
 }
