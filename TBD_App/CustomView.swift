@@ -26,7 +26,9 @@ struct CustomView: View {
     var body: some View {
             VStack{
                 HStack{
-                    Text("Hi " + dataController.getUser() + " Customize your well beeing")
+                    Text("Hi " + dataController.getUser() + " Set your goals")
+                        .foregroundColor(.pink)
+                        .font(.system(size: 24, weight: .medium, design: .rounded))
                 }
                 Spacer().frame(height: 40)
                 VStack(alignment: .center){

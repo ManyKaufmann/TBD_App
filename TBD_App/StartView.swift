@@ -51,7 +51,7 @@ struct StartView: View {
                 .background(Color.pink)
                 .cornerRadius(30)
                 
-            }
+           }
         }.navigationTitle("Back")
             .navigationBarBackButtonHidden(false)
     }

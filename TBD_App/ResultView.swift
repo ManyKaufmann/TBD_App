@@ -21,82 +21,94 @@ struct ResultView: View {
                     .foregroundColor(Color.pink)
                     .font(.system(size: 40, weight: .medium, design: .rounded))
             }
-            
-            NavigationLink(destination: TrackWaterView(), tag: "TrackWaterView", selection: $selection) {EmptyView()}
-            VStack(alignment: .leading) {
-                Button("Show Drink") {
-                    checkLoop()
-                    self.selection = "TrackWaterView"
-                }
-
-                .foregroundColor(.white)
-                .font(.system(size: 24, weight: .medium, design: .rounded))
-                Text("Drink " + String(format: "%.1f", entityToday.drinkCurrent)+"/"+String(format: "%.1f", entityToday.drinkGoal))
-                    .foregroundColor(Color.white)
+            //Water
+            NavigationLink(destination: TrackWaterView(), tag: "TrackWaterView", selection: $selection) {
+                VStack(alignment: .leading) {
+                    Button("Track Water") {
+                        checkLoop()
+                        self.selection = "TrackWaterView"
+                    }
+                    .foregroundColor(.white)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
-                        ProgressView(value: entityToday.drinkCurrent, total: entityToday.drinkGoal)
-                            .cornerRadius(5)
-                            .accentColor(Color.yellow)
-                            .frame(width: 350, height: 50)
-                    }.padding()
-                        .background(Color.pink)
-                        .cornerRadius(30)
-            
-            VStack(alignment: .leading) {
-                Button("Show Activity") {
-                    checkLoop()
-                    showingSheet.toggle()
-                }
-                .sheet(isPresented: $showingSheet) {
-                    //NavigationLink(destination: TrackActivityView(), tag: "TrackActivityView", selection: $selection) {EmptyView()}
-                    TrackActivityView()
-                }
-                .foregroundColor(.white)
-                .font(.system(size: 24, weight: .medium, design: .rounded))
-                Text("Activity " + String(format: "%.1f", entityToday.activityCurrent)+"/"+String(format: "%.1f", entityToday.activityGoal))
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 24, weight: .medium, design: .rounded))
-                ProgressView(value: entityToday.activityCurrent, total: entityToday.activityGoal)
-                    .accentColor(Color.pink)
-                    .cornerRadius(5)
-                    .accentColor(Color.yellow)
-                    .frame(width: 350, height: 50)
-            }.padding()
-                .background(Color.pink)
-                .cornerRadius(30)
-            
-            VStack(alignment: .leading) {
-                Button("Show Social") {
-                    checkLoop()
-                    showingSheet.toggle()
-                }
-                .sheet(isPresented: $showingSheet) {
-                    TrackSocialView()
-                }
-                .foregroundColor(.white)
-                .font(.system(size: 24, weight: .medium, design: .rounded))
-                Text("Social " + String(format: "%.1f", entityToday.socialCurrent)+"/"+String(format: "%.1f", entityToday.socialGoal))
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 24, weight: .medium, design: .rounded))
+                    Text("Drink " + String(format: "%.1f", entityToday.drinkCurrent)+"/"+String(format: "%.1f", entityToday.drinkGoal))
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 24, weight: .medium, design: .rounded))
+                    
+                    ProgressView(value: entityToday.drinkCurrent, total: entityToday.drinkGoal)
+                        .cornerRadius(5)
+                        .accentColor(Color.yellow)
+                        .frame(width: 350, height: 50)
+                }.padding()
+                    .background(Color.pink)
+                    .cornerRadius(30)
                 
-                ProgressView(value: entityToday.socialCurrent, total: entityToday.socialGoal)
-                    .accentColor(Color.pink)
-                    //.scaleEffect(x: 4, y: 10, anchor: .center)
-                    .cornerRadius(5)
-                    .accentColor(Color.yellow)
-                    .frame(width: 350, height: 50)
-            }.padding()
-                .background(Color.pink)
-                .cornerRadius(30)
+            }
             
-            VStack(alignment: .leading) {
-                Button("Show MeTime") {
-                    checkLoop()
-                    showingSheet.toggle()
-                }
-                .sheet(isPresented: $showingSheet) {
-                    TrackMeTimeView()
-                }
+            //Activity
+            NavigationLink(destination: TrackActivityView()){
+                VStack(alignment: .leading) {
+                    Button("Show Activity") {
+                        checkLoop()
+                        // showingSheet.toggle()
+                    }
+                    //.sheet(isPresented: $showingSheet) {
+                    //NavigationLink(destination: TrackActivityView(), tag: "TrackActivityView", selection: $selection) {EmptyView()}
+                    //   TrackActivityView()
+                    // }
+                    .foregroundColor(.white)
+                    .font(.system(size: 24, weight: .medium, design: .rounded))
+                    Text("Activity " + String(format: "%.1f", entityToday.activityCurrent)+"/"+String(format: "%.1f", entityToday.activityGoal))
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 24, weight: .medium, design: .rounded))
+                    ProgressView(value: entityToday.activityCurrent, total: entityToday.activityGoal)
+                        .accentColor(Color.pink)
+                        .cornerRadius(5)
+                        .accentColor(Color.yellow)
+                        .frame(width: 350, height: 50)
+                }.padding()
+                    .background(Color.pink)
+                    .cornerRadius(30)
+            }
+            
+            
+            
+            //Social
+            NavigationLink(destination: TrackSocialView()){
+                VStack(alignment: .leading) {
+                    Button("Show Social") {
+                        checkLoop()
+                        //     showingSheet.toggle()
+                    }
+                    //  .sheet(isPresented: $showingSheet) {
+                    //      TrackSocialView()
+                    // }
+                    .foregroundColor(.white)
+                    .font(.system(size: 24, weight: .medium, design: .rounded))
+                    Text("Social " + String(format: "%.1f", entityToday.socialCurrent)+"/"+String(format: "%.1f", entityToday.socialGoal))
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 24, weight: .medium, design: .rounded))
+                    
+                    ProgressView(value: entityToday.socialCurrent, total: entityToday.socialGoal)
+                        .accentColor(Color.pink)
+                    //.scaleEffect(x: 4, y: 10, anchor: .center)
+                        .cornerRadius(5)
+                        .accentColor(Color.yellow)
+                        .frame(width: 350, height: 50)
+                }.padding()
+                    .background(Color.pink)
+                    .cornerRadius(30)
+            }
+            
+            //ME TIME
+            NavigationLink(destination: TrackMeTimeView()){
+                VStack(alignment: .leading) {
+                    Button("Show MeTime") {
+                        checkLoop()
+                        //   showingSheet.toggle()
+                    }
+                    // .sheet(isPresented: $showingSheet) {
+                    //    TrackMeTimeView()
+              //  }
                 .foregroundColor(.white)
                 .font(.system(size: 24, weight: .medium, design: .rounded))
                 Text("MeTime " + String(format: "%.1f", entityToday.meTimeCurrent)+"/"+String(format: "%.1f", entityToday.meTimeGoal))
@@ -111,18 +123,24 @@ struct ResultView: View {
             }.padding()
                 .background(Color.pink)
                 .cornerRadius(30)
-        }.padding()
+        }
+        }
+        .padding()
     }
+    
+    
     
     func checkLoop(){
         if StateManager.shared.loopIsExpired() {
             print("Loop exp")
         }
     }
-}
+
+    
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView()
     }
+}
 }
