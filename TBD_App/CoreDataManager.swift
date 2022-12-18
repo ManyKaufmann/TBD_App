@@ -7,11 +7,12 @@
 
 import CoreData
 import SwiftUI
-
+/*
 struct CoreDataManager: View {
     @StateObject var dataController = DataController()
     
     var body: some View {
+       
         var entityToday = dataController.customEntities[dataController.customEntities.count-1]
         VStack{
             List{
@@ -21,11 +22,14 @@ struct CoreDataManager: View {
                     Text("Activity " + String(format: "%.1f", entity.activityCurrent)+"/"+String(format: "%.1f", entity.activityGoal))
                     Text("Social " + String(format: "%.1f", entity.socialCurrent)+"/"+String(format: "%.1f", entity.socialGoal))
                     Text("MeTime " + String(format: "%.1f", entity.meTimeCurrent)+"/"+String(format: "%.1f", entity.meTimeGoal))
+                    Text("Activity W " + String(format: "%.1f", entity.activityCurrent)+"/"+String(format: "%.1f", entity.activityGoalWeekly))
+                    Text("Social W " + String(format: "%.1f", entity.socialCurrent)+"/"+String(format: "%.1f", entity.socialGoalWeekly))
+                    Text("MeTime W " + String(format: "%.1f", entity.meTimeCurrent)+"/"+String(format: "%.1f", entity.meTimeGoalWeekly))
                 }.onDelete(perform: dataController.deleteData)
             }
           
             Button(action: {
-                dataController.addGoals(param1: "2.0", param2: "1.0", param3: "3.0", param4: "0.5")
+                dataController.addDailyGoals(param1: "2.0", param2: "1.0", param3: "3.0", param4: "0.5")
             }){
                 Text("Insert Data")
             }
@@ -35,6 +39,7 @@ struct CoreDataManager: View {
                 Text("Update Data")
             }
         }
+        
     }
 }
 
@@ -43,3 +48,5 @@ struct CoreDataManager_Previews: PreviewProvider {
         CoreDataManager()
     }
 }
+
+*/

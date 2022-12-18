@@ -126,7 +126,7 @@ struct TrackSocialView: View {
                         .padding(30)
                 
                     Button() {
-                        dataController.setNewGoal(valueToAdd: weeklyGoal, caseNr: 3)
+                        dataController.setDailyGoal(valueToAdd: weeklyGoal, caseNr: 3)
                         data = ""
                         self.selection = "ResultView"
                     }label: {

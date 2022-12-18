@@ -103,7 +103,7 @@ struct TrackWaterView: View {
                         .padding(30)
                 
                     Button() {
-                        dataController.setNewGoal(valueToAdd: goal, caseNr: 1)
+                        dataController.setDailyGoal(valueToAdd: goal, caseNr: 1)
                         data = ""
                         if dataController.customEntities[dataController.customEntities.count-1].drinkCurrent >= dataController.customEntities[dataController.customEntities.count-1].drinkGoal && goalNotReached {
                             showingAlert = true

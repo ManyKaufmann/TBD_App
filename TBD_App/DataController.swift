@@ -27,6 +27,7 @@ class DataController: ObservableObject {
         fetchCustomData()
     }
     
+    // Get both Entities from CoreData
     func fetchCustomData() {
         let customDataRequest = NSFetchRequest<CustomData>(entityName: "CustomData")
         do {
@@ -43,8 +44,8 @@ class DataController: ObservableObject {
         }
     }
     
-    
-    func addGoals(param1: String, param2: String, param3: String, param4: String) {
+    // Set all Daily Goals
+    func addDailyGoals(param1: String, param2: String, param3: String, param4: String, param5: String, param6: String, param7: String) {
         let newCustomData = CustomData(context: container.viewContext)
         newCustomData.id = UUID()
         newCustomData.startDate = Date.now
@@ -52,6 +53,9 @@ class DataController: ObservableObject {
         newCustomData.activityGoal = (param2 as NSString).floatValue
         newCustomData.socialGoal = (param3 as NSString).floatValue
         newCustomData.meTimeGoal = (param4 as NSString).floatValue
+        newCustomData.activityGoalWeekly = (param5 as NSString).floatValue
+        newCustomData.socialGoalWeekly = (param6 as NSString).floatValue
+        newCustomData.meTimeGoalWeekly = (param7 as NSString).floatValue
         saveData()
         print(Date.now)
     }
@@ -67,6 +71,7 @@ class DataController: ObservableObject {
         saveData()
     }
     
+    // Specific Value to add
     func addData(valueToAdd: String, caseNr: Int){
         let entityToday = customEntities[customEntities.count-1]
         switch caseNr {
@@ -84,7 +89,8 @@ class DataController: ObservableObject {
         saveData()
     }
     
-    func setNewGoal(valueToAdd: String, caseNr: Int){
+    // Set one specific Daily Goal
+    func setDailyGoal(valueToAdd: String, caseNr: Int){
         let entityToday = customEntities[customEntities.count-1]
         switch caseNr {
         case 1:
@@ -101,6 +107,7 @@ class DataController: ObservableObject {
         saveData()
     }
     
+    // Set one specific Weekly Goal
     func setWeeklyGoal(valueToAdd: String, caseNr: Int){
         let entityToday = customEntities[customEntities.count-1]
         switch caseNr {
@@ -125,6 +132,7 @@ class DataController: ObservableObject {
         saveData()
     }
     
+    // Refresh Data
     func saveData() {
         do {
             try container.viewContext.save()
@@ -134,6 +142,7 @@ class DataController: ObservableObject {
         }
     }
     
+    // Func not finished yet
     func deleteData(indexSet: IndexSet){
         guard let index = indexSet.first else {return}
         let customEntity = customEntities[index]

@@ -92,7 +92,7 @@ struct TrackMeTimeView: View {
                         .padding(30)
                 
                     Button() {
-                        dataController.setNewGoal(valueToAdd: goal, caseNr: 4)
+                        dataController.setDailyGoal(valueToAdd: goal, caseNr: 4)
                         data = ""
                         self.selection = "ResultView"
                     }label: {

@@ -93,7 +93,7 @@ struct TrackActivityView: View {
                         .padding(30)
                 
                     Button() {
-                        dataController.setNewGoal(valueToAdd: goal, caseNr: 2)
+                        dataController.setDailyGoal(valueToAdd: goal, caseNr: 2)
                         data = ""
                         self.selection = "ResultView"
                     }label: {
