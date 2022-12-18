@@ -42,9 +42,10 @@ struct TrackWaterView: View {
                     .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                     .rotationEffect(.init(degrees: -90))
                     .animation(Animation.linear, value: 3)
-                Text("\(String(format: "%.1f", self.fill)) l /" + String(format: "%.1f", entityToday.drinkGoal))
+                //Text("\(String(format: "%.1f", self.fill)) l / " + "\(String(format: "%.1f", entityToday.drinkGoal)) l")
+                Text("Goal: \(String(format: "%.1f", entityToday.drinkGoal)) l")
                     .foregroundColor(.pink)
-                    .font(.system(size: 52))
+                    .font(.system(size: 35))
                 
             }
             .padding(50)
@@ -77,11 +78,12 @@ struct TrackWaterView: View {
                         self.selection = "ResultView"
                     } label: {
                         Text("Add")
+                            .bold()
                             .font(.system(size: 13, weight: .medium, design: .rounded))
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    .frame(width: 90, height: 60)
+                    .frame(width: 70, height: 40)
                     .foregroundColor(Color.white)
                     .background(Color.pink)
                     .cornerRadius(30)
@@ -94,9 +96,8 @@ struct TrackWaterView: View {
                     }
             }
 
-            
             HStack(){
-                    Text("Goal")
+                    Text("Daily Goal")
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
@@ -119,12 +120,13 @@ struct TrackWaterView: View {
                         }
                         self.selection = "ResultView"
                     }label: {
-                        Text("Add")
+                        Text("Set new")
+                            .bold()
                             .font(.system(size: 13, weight: .medium, design: .rounded))
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    .frame(width: 90, height: 60)
+                    .frame(width: 70, height: 40)
                     .foregroundColor(Color.white)
                     .background(Color.pink)
                     .cornerRadius(30)
@@ -155,6 +157,7 @@ struct TrackWaterView: View {
                     goalNotReached = false
                 }
             }
+            
         }
     }
 }

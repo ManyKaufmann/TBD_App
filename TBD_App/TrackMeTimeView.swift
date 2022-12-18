@@ -39,21 +39,22 @@ struct TrackMeTimeView: View {
                     .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                     .rotationEffect(.init(degrees: -90))
                     .animation(Animation.linear, value: 3)
-                Text("\(String(format: "%.1f", self.fill)) min")
+                Text("Goal: \(String(format: "%.1f", entityToday.meTimeGoal)) h")
+                //Text("\(String(format: "%.1f", self.fill)) h / " + "\(String(format: "%.1f", entityToday.meTimeGoal)) h")
                     .foregroundColor(.pink)
-                    .font(.system(size: 52))
+                    .font(.system(size: 35))
             }
             .padding(50)
         }
         
         VStack{
             HStack(){
-                    Text("Add MeTime")
+                    Text("MeTime")
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, align)
                 
-                    TextField("in min", text: $data)
+                    TextField("in h", text: $data)
                         .frame(width: inputWidth, height: inputHeight)
                         .padding(5.0)
                         .overlay(
@@ -69,11 +70,11 @@ struct TrackMeTimeView: View {
                         self.selection = "ResultView"
                     }label: {
                         Text("Add")
-                            .font(.system(size: 24, weight: .medium, design: .rounded))
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    .frame(width: 90, height: 60)
+                    .frame(width: 70, height: 40)
                     .foregroundColor(Color.white)
                     .background(Color.pink)
                     .cornerRadius(30)
@@ -102,12 +103,13 @@ struct TrackMeTimeView: View {
                         data = ""
                         self.selection = "ResultView"
                     }label: {
-                        Text("Add")
-                            .font(.system(size: 24, weight: .medium, design: .rounded))
+                        Text("Set new")
+                            .bold()
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    .frame(width: 90, height: 60)
+                    .frame(width: 70, height: 40)
                     .foregroundColor(Color.white)
                     .background(Color.pink)
                     .cornerRadius(30)
@@ -136,25 +138,27 @@ struct TrackMeTimeView: View {
                         data = ""
                         self.selection = "ResultView"
                     }label: {
-                        Text("Add")
-                            .font(.system(size: 24, weight: .medium, design: .rounded))
+                        Text("Set new")
+                            .bold()
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    .frame(width: 90, height: 60)
+                    .frame(width: 70, height: 40)
                     .foregroundColor(Color.white)
                     .background(Color.pink)
                     .cornerRadius(30)
                     .padding(.trailing, align)
             }
             
-            
+            /*
             Button("Add 15min"){
                 self.fill += 0.33
                 dataController.addData(valueToAdd: "0.25", caseNr: 2)
                 data = ""
                 self.selection = "ResultView"
             }
+            */
         }
     }
 }
