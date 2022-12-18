@@ -34,41 +34,36 @@ struct CustomView: View {
                         .font(.system(size: 24, weight: .medium, design: .rounded))
                 }
                 Spacer().frame(height: 40)
-                VStack(alignment: .center){
+                VStack(alignment: .leading){
                     
                     // Drink Section
-                    VStack (alignment: .leading){
+                    VStack (alignment: .center){
                         HStack(){
                             Label("", systemImage: "star.fill")
                                 .frame(maxWidth: 30.0, alignment: .leading)
-                            Text("Drink goal:").font(.system(size: 13))
-                                .frame(maxWidth: 100.0, alignment: .leading)
-                            Text("Daily").bold()
-                                .frame(maxWidth: 50.0, alignment: .leading)
+                            Text("Drink Daily Goal:").font(.system(size: 13))
+                                .frame(maxWidth: 150.0, alignment: .leading)
+                            
                             TextField("in liter", text: $drinkGoal)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 6)
                                         .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                    )
-                                .font(.system(size: 13))
-                                .frame(maxWidth: 70.0, alignment: .leading)
+                                )
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
                     Spacer().frame(height: distanceBetweenBlocks)
                     
                     // Activity Section
                     
-                    VStack(alignment: .leading){
+                    VStack(alignment: .center){
                         HStack{
                             Label("", systemImage: "star.fill")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Activity goal:").font(.system(size: 13))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Daily").bold()
-                                .padding(.leading, 50.0)
-                                .frame(maxWidth: .infinity, alignment: .center)
+                                .frame(maxWidth: 30.0, alignment: .leading)
+                            Text("Activity Daily Goal:").font(.system(size: 13))
+                                .frame(maxWidth: 150.0, alignment: .leading)
                             TextField("in hours", text: $activityGoal)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
@@ -76,16 +71,13 @@ struct CustomView: View {
                                     RoundedRectangle(cornerRadius: 6)
                                         .stroke(.gray.opacity(0.5), lineWidth: 2)
                                 )
-                                .frame(maxWidth: .infinity, alignment: .center)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         HStack{
                             Label("", systemImage: "star.fill")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Activity goal:").font(.system(size: 13))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Weekly").bold()
-                                .padding(.leading, 50.0)
-                                .frame(maxWidth: .infinity, alignment: .center)
+                                .frame(maxWidth: 30.0, alignment: .leading)
+                            Text("Activity Weekly Goal:").font(.system(size: 13))
+                                .frame(maxWidth: 150.0, alignment: .leading)
                             TextField("in hours", text: $activityGoalWeekly)
                                 .frame(width: inputWidth, height: inputHeight)
                                 .padding(.leading, 10.0)
@@ -93,91 +85,85 @@ struct CustomView: View {
                                     RoundedRectangle(cornerRadius: 6)
                                         .stroke(.gray.opacity(0.5), lineWidth: 2)
                                 )
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                                .font(.system(size: 13))
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.bottom, -37.0)
                         }
                     }
                     Spacer().frame(height: distanceBetweenBlocks)
                     
-                    // Activity Section
+                    // Social Section
                     
-                    HStack(){
-                        Label("", systemImage: "star.fill")
-                        Text("Social goal:").font(.system(size: 13))
-                        
-                        VStack{
-                            HStack{
-                                Text("Daily").bold()
-                                    .padding(.leading, 50.0)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                TextField("in hours", text: $socialGoal)
-                                    .frame(width: inputWidth, height: inputHeight)
-                                    .padding(.leading, 10.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                    )
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                            }
-                            
-                            HStack{
-                                Text("Weekly").bold()
-                                    .padding(.leading, 50.0)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                TextField("in hours", text: $socialGoalWeekly)
-                                    .frame(width: inputWidth, height: inputHeight)
-                                    .padding(.leading, 10.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                    )
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                            }
-                        }.font(.system(size: 13))
-                            .padding(.bottom, -37.0)
+                    VStack(alignment: .center){
+                        HStack{
+                            Label("", systemImage: "star.fill")
+                                .frame(maxWidth: 30.0, alignment: .leading)
+                            Text("Social Daily Goal:").font(.system(size: 13))
+                                .frame(maxWidth: 150.0, alignment: .leading)
+                            TextField("in hours", text: $socialGoal)
+                                .frame(width: inputWidth, height: inputHeight)
+                                .padding(.leading, 10.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                )
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        HStack{
+                            Label("", systemImage: "star.fill")
+                                .frame(maxWidth: 30.0, alignment: .leading)
+                            Text("Social Weekly Goal:").font(.system(size: 13))
+                                .frame(maxWidth: 150.0, alignment: .leading)
+                            TextField("in hours", text: $socialGoalWeekly)
+                                .frame(width: inputWidth, height: inputHeight)
+                                .padding(.leading, 10.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                )
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom, -37.0)
+                        }
                     }
                     Spacer().frame(height: distanceBetweenBlocks)
                     
-                    // Activity
+                    // MeTime
                     
-                    HStack(){
-                        Label("", systemImage: "star.fill")
-                        Text("MeTime goal:").font(.system(size: 13))
-                        
-                        VStack{
-                            HStack{
-                                Text("Daily").bold()
-                                    .padding(.leading, 50.0)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                TextField("in hours", text: $meTimeGoal)
-                                    .frame(width: inputWidth, height: inputHeight)
-                                    .padding(.leading, 10.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                    )
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                            }
-                            
-                            HStack{
-                                Text("Weekly").bold()
-                                    .padding(.leading, 50.0)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                TextField("in hours", text: $meTimeGoalWeekly)
-                                    .frame(width: inputWidth, height: inputHeight)
-                                    .padding(.leading, 10.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                    )
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                            }
-                        }.font(.system(size: 13))
-                            .padding(.bottom, -37.0)
+                    VStack(alignment: .center){
+                        HStack{
+                            Label("", systemImage: "star.fill")
+                                .frame(maxWidth: 30.0, alignment: .leading)
+                            Text("MeTime Daily Goal:").font(.system(size: 13))
+                                .frame(maxWidth: 150.0, alignment: .leading)
+                            TextField("in hours", text: $meTimeGoal)
+                                .frame(width: inputWidth, height: inputHeight)
+                                .padding(.leading, 10.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                )
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        HStack{
+                            Label("", systemImage: "star.fill")
+                                .frame(maxWidth: 30.0, alignment: .leading)
+                            Text("MeTime Weekly Goal:").font(.system(size: 13))
+                                .frame(maxWidth: 150.0, alignment: .leading)
+                            TextField("in hours", text: $meTimeGoalWeekly)
+                                .frame(width: inputWidth, height: inputHeight)
+                                .padding(.leading, 10.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                )
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom, -37.0)
+                        }
                     }
-                    Spacer()
-                    
+                    Spacer().frame(height: distanceBetweenBlocks)
+                }
+                .padding(25.0)
+                
+                
                     // Button
                     NavigationLink(destination: ResultView(), tag: "ResultView", selection: $selection) {EmptyView()}
                     Button(action: {
@@ -212,7 +198,7 @@ struct CustomView: View {
                     .foregroundColor(Color.white)
                     .background(Color.pink)
                     .cornerRadius(30)
-                }
+                
                 Spacer().frame(height: 100)
             }
             .padding(.top, 50.0)
