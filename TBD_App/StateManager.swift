@@ -2,7 +2,7 @@
 //  StateManager.swift
 //  TBD_App
 //
-//  Created by Many & Nizam on 04.12.22.
+//  Created by Manynouk Kaufmann & Nizam Oezdemir on 04.12.22.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  TrackWaterView.swift
 //  TBD_App
 //
-//  Created by Many Kaufmann on 12.12.22.
+//  Created by Manynouk Kaufmann & Nizam Oezdemir on 12.12.22.
 //
 
 import SwiftUI

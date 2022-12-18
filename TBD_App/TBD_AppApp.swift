@@ -2,7 +2,7 @@
 //  TBD_AppApp.swift
 //  TBD_App
 //
-//  Created by Many Kaufmann und Nizam Oezdemir on 16.11.22.
+//  Created by Manynouk Kaufmann & Nizam Oezdemir on 16.11.22.
 //  
 // 
 
