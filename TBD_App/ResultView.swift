@@ -41,7 +41,6 @@ struct ResultView: View {
                 }.padding()
                     .background(Color.pink)
                     .cornerRadius(30)
-                
             }
             
             //Activity
