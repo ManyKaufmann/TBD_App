@@ -28,6 +28,7 @@ struct TrackWaterView: View {
             .font(.largeTitle)
             .fontWeight(.medium)
             .foregroundColor(Color.pink)
+      
         
         ZStack{
             ZStack{
@@ -41,9 +42,10 @@ struct TrackWaterView: View {
                     .stroke(Color.pink, style: StrokeStyle(lineWidth: 30))
                     .rotationEffect(.init(degrees: -90))
                     .animation(Animation.linear, value: 3)
-                Text("\(String(format: "%.1f", self.fill)) l")
+                Text("\(String(format: "%.1f", self.fill)) l /" + String(format: "%.1f", entityToday.drinkGoal))
                     .foregroundColor(.pink)
                     .font(.system(size: 52))
+                
             }
             .padding(50)
         }
@@ -66,6 +68,7 @@ struct TrackWaterView: View {
                         .padding(30)
                 
                     Button() {
+                       // self.fill += CGFloat((data as NSString).floatValue)
                         dataController.addData(valueToAdd: data, caseNr: 1)
                         data = ""
                         if dataController.customEntities[dataController.customEntities.count-1].drinkCurrent >= dataController.customEntities[dataController.customEntities.count-1].drinkGoal && goalNotReached {
@@ -74,7 +77,7 @@ struct TrackWaterView: View {
                         self.selection = "ResultView"
                     } label: {
                         Text("Add")
-                            .font(.system(size: 24, weight: .medium, design: .rounded))
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -117,7 +120,7 @@ struct TrackWaterView: View {
                         self.selection = "ResultView"
                     }label: {
                         Text("Add")
-                            .font(.system(size: 24, weight: .medium, design: .rounded))
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -134,7 +137,7 @@ struct TrackWaterView: View {
                     }
             }
             
-            
+            /*
             Button("Add 0.33 dl"){
                 self.fill += 0.33
                 dataController.addData(valueToAdd: "0.33", caseNr: 1)
@@ -142,8 +145,10 @@ struct TrackWaterView: View {
                 if dataController.customEntities[dataController.customEntities.count-1].drinkCurrent >= dataController.customEntities[dataController.customEntities.count-1].drinkGoal && goalNotReached {
                     showingAlert = true
                 }
-                self.selection = "ResultView"
+              //  self.selection = "ResultView"
             }
+            */
+            
             .alert("You reached your Goals!!!", isPresented: $showingAlert) {
                 Button("Ok"){
                     showingAlert = false
