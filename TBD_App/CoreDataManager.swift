@@ -2,7 +2,7 @@
 //  CoreDataManager.swift
 //  TBD_App
 //
-//  Created by Many & Nizam on 27.11.22.
+//  Created by Manynouk Kaufmann & Nizam Oezdemir on 27.11.22.
 //
 
 import CoreData

@@ -2,7 +2,7 @@
 //  TrackMeTimeView.swift
 //  TBD_App
 //
-//  Created by HSLU-N0004388 on 18.12.22.
+//  Created by Manynouk Kaufmann & Nizam Oezdemir on 18.12.22.
 //
 
 import SwiftUI

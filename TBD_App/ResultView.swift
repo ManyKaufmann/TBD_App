@@ -2,7 +2,7 @@
 //  ResultView.swift
 //  TBD_App
 //
-//  Created by Many & Nizam on 21.11.22.
+//  Created by Manynouk Kaufmann & Nizam Oezdemir on 21.11.22.
 //
 
 import SwiftUI

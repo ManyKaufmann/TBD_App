@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  TBD_App
 //
-//  Created by Many Kaufmann on 16.11.22.
+//  Created by Manynouk Kaufmann & Nizam Oezdemir on 16.11.22.
 //
 
 import CoreData
