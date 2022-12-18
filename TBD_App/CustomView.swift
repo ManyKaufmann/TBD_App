@@ -29,7 +29,7 @@ struct CustomView: View {
     var body: some View {
             VStack{
                 HStack{
-                    Text("Hi " + dataController.getUser() + ", set your goals!")
+                    Text("Hi " + dataController.getUser() + " Set your goals")
                         .foregroundColor(.pink)
                         .font(.system(size: 24, weight: .medium, design: .rounded))
                 }
@@ -40,20 +40,62 @@ struct CustomView: View {
                     VStack (alignment: .leading){
                         HStack(){
                             Label("", systemImage: "star.fill")
+                                .frame(maxWidth: 30.0, alignment: .leading)
                             Text("Drink goal:").font(.system(size: 13))
-                            HStack{
-                                Text("Daily").bold()
-                                
-                                TextField("in liter", text: $drinkGoal)
-                                    .frame(width: inputWidth, height: inputHeight)
-                                    .padding(.leading, 10.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                .frame(maxWidth: 100.0, alignment: .leading)
+                            Text("Daily").bold()
+                                .frame(maxWidth: 50.0, alignment: .leading)
+                            TextField("in liter", text: $drinkGoal)
+                                .frame(width: inputWidth, height: inputHeight)
+                                .padding(.leading, 10.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
                                     )
-                                
-                            }.font(.system(size: 13))
+                                .font(.system(size: 13))
+                                .frame(maxWidth: 70.0, alignment: .leading)
+                        }
+                    }
+                    Spacer().frame(height: distanceBetweenBlocks)
+                    
+                    // Activity Section
+                    
+                    VStack(alignment: .leading){
+                        HStack{
+                            Label("", systemImage: "star.fill")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Activity goal:").font(.system(size: 13))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Daily").bold()
+                                .padding(.leading, 50.0)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            TextField("in hours", text: $activityGoal)
+                                .frame(width: inputWidth, height: inputHeight)
+                                .padding(.leading, 10.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                )
+                                .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                        HStack{
+                            Label("", systemImage: "star.fill")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Activity goal:").font(.system(size: 13))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Weekly").bold()
+                                .padding(.leading, 50.0)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            TextField("in hours", text: $activityGoalWeekly)
+                                .frame(width: inputWidth, height: inputHeight)
+                                .padding(.leading, 10.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(.gray.opacity(0.5), lineWidth: 2)
+                                )
                                 .frame(maxWidth: .infinity, alignment: .trailing)
+                                .font(.system(size: 13))
+                                .padding(.bottom, -37.0)
                         }
                     }
                     Spacer().frame(height: distanceBetweenBlocks)
@@ -62,46 +104,7 @@ struct CustomView: View {
                     
                     HStack(){
                         Label("", systemImage: "star.fill")
-                        Text("Activity goal hour:").font(.system(size: 13))
-                        
-                        VStack{
-                            HStack{
-                                Text("Daily").bold()
-                                    .padding(.leading, 50.0)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                TextField("in hours", text: $activityGoal)
-                                    .frame(width: inputWidth, height: inputHeight)
-                                    .padding(.leading, 10.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                    )
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                            }
-                            
-                            HStack{
-                                Text("Weekly").bold()
-                                    .padding(.leading, 50.0)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                TextField("in hours", text: $activityGoalWeekly)
-                                    .frame(width: inputWidth, height: inputHeight)
-                                    .padding(.leading, 10.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .stroke(.gray.opacity(0.5), lineWidth: 2)
-                                    )
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                            }
-                        }.font(.system(size: 13))
-                            .padding(.bottom, -37.0)
-                    }
-                    Spacer().frame(height: distanceBetweenBlocks)
-                    
-                    // Activity Section
-                    
-                    HStack(){
-                        Label("", systemImage: "star.fill")
-                        Text("Activity goal hour:").font(.system(size: 13))
+                        Text("Social goal:").font(.system(size: 13))
                         
                         VStack{
                             HStack{
@@ -140,7 +143,7 @@ struct CustomView: View {
                     
                     HStack(){
                         Label("", systemImage: "star.fill")
-                        Text("Activity goal hour:").font(.system(size: 13))
+                        Text("MeTime goal:").font(.system(size: 13))
                         
                         VStack{
                             HStack{
