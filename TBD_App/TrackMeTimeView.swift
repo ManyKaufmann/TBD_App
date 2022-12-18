@@ -21,6 +21,12 @@ struct TrackMeTimeView: View {
     var body: some View {
         NavigationLink(destination: ResultView(), tag: "ResultView", selection: $selection) {EmptyView()}
         var entityToday = dataController.customEntities[dataController.customEntities.count-1]
+        
+        Text("Track Me Time")
+            .font(.largeTitle)
+            .fontWeight(.medium)
+            .foregroundColor(Color.pink)
+        
         ZStack{
             ZStack{
                 

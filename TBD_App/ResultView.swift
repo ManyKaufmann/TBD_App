@@ -46,7 +46,7 @@ struct ResultView: View {
             //Activity
             NavigationLink(destination: TrackActivityView()){
                 VStack(alignment: .leading) {
-                    Button("Show Activity") {
+                    Button("Track Activity") {
                         checkLoop()
                         // showingSheet.toggle()
                     }
@@ -74,7 +74,7 @@ struct ResultView: View {
             //Social
             NavigationLink(destination: TrackSocialView()){
                 VStack(alignment: .leading) {
-                    Button("Show Social") {
+                    Button("Track Social") {
                         checkLoop()
                         //     showingSheet.toggle()
                     }
@@ -101,7 +101,7 @@ struct ResultView: View {
             //ME TIME
             NavigationLink(destination: TrackMeTimeView()){
                 VStack(alignment: .leading) {
-                    Button("Show MeTime") {
+                    Button("Track MeTime") {
                         checkLoop()
                         //   showingSheet.toggle()
                     }
